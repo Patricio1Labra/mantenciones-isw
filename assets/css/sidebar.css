@@ -1,0 +1,37 @@
+#sidebar-container .menu .item{
+    position: relative;
+    cursor: pointer;
+}
+#sidebar-container .menu .item a{
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    display: block;
+    padding: 5px 30px;
+    line-height: 60%;
+}
+#sidebar-container .menu .item a:hover{
+    background: blue;
+    transition: 0.3s ease;
+}
+#sidebar-container .menu .item i{
+    margin-right: 10px;
+}
+
+#sidebar-container .menu .item a .drop{
+    position: absolute;
+    font-size: 25px;
+    margin-left : 15px;
+    transition: 0.3s ease;
+    
+}
+#sidebar-container .menu .item .sub-menu{
+    background: rgba(255, 255, 255, 0);
+    display: none;
+}
+#sidebar-container .menu .item .show{
+    display: block;
+}
+#sidebar-container .menu .item .sub-menu a{
+    padding-left: 80px;
+}

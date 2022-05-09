@@ -5,35 +5,24 @@
                 INGENIERÍA DE SOFTWARE</a></h4>
             </div>
             <div class="menu">
-                <a href="../" class="d-block text-light p-3 border-0"><i class="fas fa-tachometer-alt"></i>
-                    Inicio</a>
-
-                <a href="../" class="d-block text-light p-3 border-0"><i class="fas fa-users"></i>
-                    Usuarios</a>
-
-                <a href="../" class="d-block text-light p-3 border-0"><i class="fas fa-drumstick-bite"></i>
-                    Gastos comunes</a>
-
-                <a href="../" class="d-block text-light p-3 border-0"><i class="fas fa-drumstick-bite"></i>
-                Comunicación</a>
-
-                <a href="../" class="d-block text-light p-3 border-0"><i class="fas fa-drumstick-bite"></i>
-                Reserva de espacios comunes </a>
-
-                <a href="../" class="d-block text-light p-3 border-0"><i class="fas fa-drumstick-bite"></i>
-                Visitas</a>
-
-                <a href="../" class="d-block text-light p-3 border-0"><i class="fas fa-drumstick-bite"></i>
-                Mantencion de instalaciones</a>
-
-                <a href="../" class="d-block text-light p-3 border-0"><i class="fas fa-chart-line"></i>
-                    Estadísticas</a>
-
-                <a href="../perfil/" class="d-block text-light p-3 border-0"><i class="fas fa-user"></i>
-                    Perfil</a>
-
-                <a href="../" class="d-block text-light p-3 border-0"><i class="fas fa-sliders-h"></i>
-                    Configuración</a>
+                <div class="item"><a href="../" class="d-block text-light p-3 border-0"><i class="fas fa-tachometer-alt"></i>Inicio</a></div>
+                <div class="item"><a href="../" class="d-block text-light p-3 border-0"><i class="fas fa-users"></i>Usuarios</a></div>
+                <div class="item"><a href="../" class="d-block text-light p-3 border-0"><i class="fas fa-drumstick-bite"></i>Gastos comunes</a></div>
+                <div class="item"><a href="../" class="d-block text-light p-3 border-0"><i class="fas fa-drumstick-bite"></i>Comunicación</a></div>
+                <div class="item"><a href="../" class="d-block text-light p-3 border-0"><i class="fas fa-drumstick-bite"></i>Reserva de espacios comunes </a></div>
+                <div class="item"><a href="../" class="d-block text-light p-3 border-0"><i class="fas fa-solid fa-screwdriver-wrench"></i>Visitas</a></div>
+                <div class="item">
+                    <a href="#" class="d-block text-light p-3 border-0 sub-btn"><i class="fas fa-solid fa-screwdriver-wrench"></i>Mantencion de instalaciones<i class="fas fa-caret-down drop"></i> </a>
+                    <div id="caca" class="sub-menu ">
+                        <a href="../" class="sub-item">Item 1</a>
+                        <a href="../" class="sub-item">Item 2</a>
+                        <a href="../" class="sub-item">Item 3</a>
+                    </div>
+                </div>
+                <div class="item"><a href="../" class="d-block text-light p-3 border-0"><i class="fas fa-chart-line"></i>Estadísticas</a></div>
+                <div class="item"><a href="../perfil/" class="d-block text-light p-3 border-0"><i class="fas fa-user"></i>Perfil</a></div>
+                <div class="item"><a href="../" class="d-block text-light p-3 border-0"><i class="fas fa-sliders-h"></i>Configuración</a></div>
             </div>
         </div>
+        <script src="../scripts/sidebar.js"></script>
         <!-- Fin sidebar -->
