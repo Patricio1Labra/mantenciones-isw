@@ -6,7 +6,6 @@
 <body>
     <div class="d-flex" id="content-wrapper">
     <!-- sideBar -->
-    <!-- side -->
     <?php include('../partes/sidebar.php') ?>
     <!-- fin sideBar -->
 
