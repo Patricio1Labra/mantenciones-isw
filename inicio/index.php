@@ -1,4 +1,3 @@
-
     <!-- head -->
         <?php include('../partes/head.php') ?>
     <!-- fin head -->
@@ -6,6 +5,7 @@
 
 <body>
     <div class="d-flex" id="content-wrapper">
+    <!-- sideBar -->
     <!-- sideBar -->
     <?php include('../partes/sidebar.php') ?>
     <!-- fin sideBar -->
