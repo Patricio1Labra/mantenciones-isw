@@ -16,6 +16,10 @@
         <?php include('../partes/nav.php') ?>
     <!-- Fin Navbar -->
 
+    <!-- Con_DB -->
+    <?php include('../con_db.php') ?>
+    <!-- Fin Con_DB -->
+
         <!-- Page Content -->
         <div id="content" class="bg-grey w-100">
             <section class="bg-light py-3">
@@ -31,7 +35,27 @@
 
             <section>
                 <div class="container">
-                    
+                    <form>
+                        <div class="form-group">
+                            <label for="Tipo">Nombre de Mantencion</label>
+                            <input type="text" class="form-control" id="Tipo" placeholder="Ingrese aqui su mantencion">
+                        </div>
+                        <div class="form-group">
+                            <label for="Descripcion">Descripcion</label>
+                            <input type="text" class="form-control" id="Descripcion" placeholder="Ingrese una descripcion breve de su problema">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Example select</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
                 </div>
             </section>
         </div>
