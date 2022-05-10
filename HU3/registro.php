@@ -22,7 +22,7 @@ if(isset($_POST['Siguiente'])){
                         $ID= $valores['id'];
                     }
                 }
-                $consultaidm ="SELECT IDM as id FROM MANTENCION  WHERE IDT ='$tipo' && TITULO ='$nombre' && DESCRIPCION ='$descripcion'";
+                $consultaidm ="SELECT MAX(IDM) as id FROM MANTENCION  WHERE IDT ='$tipo' && TITULO ='$nombre' && DESCRIPCION ='$descripcion'";
                 $res = mysqli_query($conex,$consultaidm);
                 if($res) {
                     while($valoresm = $res->fetch_array()) {
