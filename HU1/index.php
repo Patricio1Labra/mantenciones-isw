@@ -18,7 +18,7 @@
     <!-- Fin Navbar -->
 
     <!-- Con_DB -->
-        <?php include('../con_db.php') ?>
+        <?php include("../con_db.php") ?>
     <!-- Fin Con_DB -->
 
         <!-- Page Content -->
