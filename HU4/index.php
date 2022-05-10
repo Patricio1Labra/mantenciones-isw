@@ -1,6 +1,6 @@
 <!-- head -->
 <?php include('../partes/head.php') ?>
-    <!-- fin head -->
+<!-- fin head -->
 
 
 <body>
@@ -34,11 +34,9 @@
                 
 
               <section>
-                  <div class="container">
-                      <div class="row">                        
-                         
-                      </div>
-                  </div>
+                  
+                    <div id='calendar'></div>
+                  
               </section>
 
         </div>
@@ -88,6 +86,7 @@
                 }
             });
             </script>
+            <script src="../scripts/calendar.js"></script>
 </body>
 
 </html>
