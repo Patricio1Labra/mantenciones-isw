@@ -45,12 +45,18 @@
                             </div>
                             <div class="card-body pt-2">
                                 <?php
-                                    $consulta="SELECT NOMBRE, FECHA_NAC FROM vecino";
+                                    $consulta="SELECT TITULO, DESCRIPCION,ESTADO FROM mantencion";
                                     $resultado= mysqli_query($conex,$consulta);
                                     if($resultado){
                                         while($row = $resultado->fetch_array()){
-                                            $nombre = $row['NOMBRE'];
-                                            $fecha = $row['FECHA_NAC'];
+                                            $titulo = $row['TITULO'];
+                                            $descripcion = $row['DESCRIPCION'];
+                                            $estado = $row['ESTADO'];
+                                            $color;
+                                            if ($estado == "P") $color = "badge-secondary";
+                                            if ($estado == "A") $color = "badge-success";
+                                            if ($estado == "R") $color = "badge-dark";
+                                            if ($estado == "F") $color = "badge-danger";
                                         ?>
                                             
                                         <div class="d-flex border-bottom py-2">
@@ -58,8 +64,8 @@
                                                 <h2 class="align-self-center mb-0"><i class="far fa-bell"></i></h2>
                                             </div>
                                             <div class="align-self-center">
-                                                <h6 class="d-inline-block mb-0"><?php echo $nombre?></h6><span class="badge badge-warning ml-2"><?php echo $fecha?></span>
-                                                <small class="d-block text-muted">ver</small>
+                                                <h6 class="d-inline-block mb-0"><?php echo $titulo?></h6><span class="badge <?php echo $color?> ml-2"><?php echo $estado?></span>
+                                                <small class="d-block text-muted"><?php echo $descripcion?></small>
                                             </div>
                                         </div>
                                         
