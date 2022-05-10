@@ -10,13 +10,14 @@
                 <div class="item"><a href="../" class="d-block text-light p-3 border-0"><i class="fas fa-drumstick-bite"></i>Gastos comunes</a></div>
                 <div class="item"><a href="../" class="d-block text-light p-3 border-0"><i class="fas fa-drumstick-bite"></i>Comunicación</a></div>
                 <div class="item"><a href="../" class="d-block text-light p-3 border-0"><i class="fas fa-drumstick-bite"></i>Reserva de espacios comunes </a></div>
-                <div class="item"><a href="../" class="d-block text-light p-3 border-0"><i class="fas fa-solid fa-screwdriver-wrench"></i>Visitas</a></div>
+                <div class="item"><a href="../" class="d-block text-light p-3 border-0"><i class="fas fa-drumstick-bite"></i>Visitas</a></div>
                 <div class="item">
                     <a href="#" class="d-block text-light p-3 border-0 sub-btn"><i class="fas fa-solid fa-screwdriver-wrench"></i>Mantencion de instalaciones<i class="fas fa-caret-down drop"></i> </a>
-                    <div id="caca" class="sub-menu ">
-                        <a href="../" class="sub-item">Item 1</a>
-                        <a href="../" class="sub-item">Item 2</a>
-                        <a href="../" class="sub-item">Item 3</a>
+                    <div id="submenu" class="sub-menu ">
+                        <a href="../" class="sub-item">Solicitud de Mantención</a>
+                        <a href="../" class="sub-item">Gestión de Solicitudes</a>
+                        <a href="../" class="sub-item">Programación de Mantenciones</a>
+                        <a href="../" class="sub-item">Calendario de Mantenciones</a>
                     </div>
                 </div>
                 <div class="item"><a href="../" class="d-block text-light p-3 border-0"><i class="fas fa-chart-line"></i>Estadísticas</a></div>

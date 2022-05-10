@@ -33,5 +33,12 @@
     display: block;
 }
 #sidebar-container .menu .item .sub-menu a{
-    padding-left: 80px;
+    padding-left: 5px;
+    
+}
+#sidebar-container .menu .item .sub-menu a.sub-item{
+    font-size: 17px;
+    line-height: 90%;
+    margin: 10px 20px;
+    
 }
