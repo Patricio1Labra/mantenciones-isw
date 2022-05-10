@@ -46,12 +46,12 @@
                             </div>
                             <div class="card-body pt-2">
                                 <?php
-                                    $consulta="SELECT IDM FROM pide WHERE IDV=1";
+                                    $consulta="SELECT IDM FROM PIDE WHERE IDV=1";
                                     $resultado= mysqli_query($conex,$consulta);
                                     if($resultado){
                                         while($row = $resultado->fetch_array()){
                                             $id = $row['IDM'];
-                                            $consulta="SELECT TITULO, DESCRIPCION,ESTADO FROM mantencion WHERE IDM='$id'";
+                                            $consulta="SELECT TITULO, DESCRIPCION,ESTADO FROM MANTENCION WHERE IDM='$id'";
                                             $resultado1= mysqli_query($conex,$consulta);
                                             if($resultado1){
                                                 while($row = $resultado1->fetch_array()){

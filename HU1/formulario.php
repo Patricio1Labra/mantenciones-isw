@@ -44,7 +44,7 @@
                                             <label for="Tipo">Tipo</label>
                                             <select class="form-control" id="Tipo" name="Tipo">
                                                 <?php
-                                                    $consulta="SELECT IDT, TIPOTITULO FROM tipo";
+                                                    $consulta="SELECT IDT, TIPOTITULO FROM TIPO";
                                                     $resultado= mysqli_query($conex,$consulta);
                                                     if($resultado){
                                                         while($row = $resultado->fetch_array()){
