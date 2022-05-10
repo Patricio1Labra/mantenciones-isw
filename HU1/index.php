@@ -80,6 +80,8 @@
                                                 }
                                             }
                                         }
+                                    }else{
+                                        echo "error";
                                     }
                                 ?>
                             </div>
