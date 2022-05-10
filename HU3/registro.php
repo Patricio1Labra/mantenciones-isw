@@ -10,8 +10,17 @@ if(isset($_POST['Siguiente'])){
     $duracion = $_POST['Duracion'];
     $ID;
     $IDM;
+    $IDMa;
     if(!empty($nombre) && $tipo!=0 && !empty($descripcion)){
-        $consulta = "INSERT INTO MANTENCION VALUES ('','$tipo','$nombre','$descripcion','P','')";
+        $consultaidma ="SELECT MAX(IDM) as id FROM MANTENCION";
+                $res = mysqli_query($conex,$consultaidma);
+                if($res) {
+                    while($valoresm = $res->fetch_array()) {
+                        $IDMa= $valoresm['id'];
+                    }
+                }
+        $IDMa=$IDMa+1;
+        $consulta = "INSERT INTO MANTENCION VALUES ('$IDMa','$tipo','$nombre','$descripcion','P','')";
         $resultado = mysqli_query($conex,$consulta);
         if($resultado) {
             if(!empty($fecha) && !empty($duracion)){
