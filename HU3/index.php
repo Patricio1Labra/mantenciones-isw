@@ -53,7 +53,7 @@
                         <input class="form-control" type="text" name="Duracion" placeholder="Duracion">
                         <br>
                         <input class="btn btn-primary btn-sm" type="submit" name="Siguiente">
-                        <button class="btn btn-success btn-sm">Ver mantenciones</button>
+                        <a class="btn btn-success btn-sm" href="../HU3/verMantenciones.php">Ver mantenciones</a>
                         <?php
                             include("../HU3/registro.php");
                         ?>
@@ -62,5 +62,6 @@
                 </div>    
             </div>
         </div>
+        
 
                 
