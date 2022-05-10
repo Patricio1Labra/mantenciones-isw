@@ -17,7 +17,7 @@
                         <a href="../" class="sub-item">Solicitud de Mantención</a>
                         <a href="../" class="sub-item">Gestión de Solicitudes</a>
                         <a href="../" class="sub-item">Programación de Mantenciones</a>
-                        <a href="../" class="sub-item">Calendario de Mantenciones</a>
+                        <a href="../HU4/index.php" class="sub-item">Calendario de Mantenciones</a>
                     </div>
                 </div>
                 <div class="item"><a href="../" class="d-block text-light p-3 border-0"><i class="fas fa-chart-line"></i>Estadísticas</a></div>
