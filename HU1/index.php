@@ -38,35 +38,37 @@
 
             <section>
                 <div class="container">
-                    <div class="card rounded-0">
-                        <div class="card-header bg-light">
-                            <h6 class="font-weight-bold mb-0">Solicitudes</h6>
-                        </div>
-                        <div class="card-body pt-2">
-                            <?php
-                                $consulta="SELECT NOMBRE, FECHA_NAC FROM vecino";
-                                $resultado= mysqli_query($conex,$consulta);
-                                if($resultado){
-                                    while($row = $resultado->fetch_array()){
-                                        $nombre = $row['NOMBRE'];
-                                        $fecha = $row['FECHA_NAC'];
-                                    ?>
+                    <div class="my-2">
+                        <div class="card rounded-0">
+                            <div class="card-header bg-light">
+                                <h6 class="font-weight-bold mb-0">Solicitudes</h6>
+                            </div>
+                            <div class="card-body pt-2">
+                                <?php
+                                    $consulta="SELECT NOMBRE, FECHA_NAC FROM vecino";
+                                    $resultado= mysqli_query($conex,$consulta);
+                                    if($resultado){
+                                        while($row = $resultado->fetch_array()){
+                                            $nombre = $row['NOMBRE'];
+                                            $fecha = $row['FECHA_NAC'];
+                                        ?>
+                                            
+                                        <div class="d-flex border-bottom py-2">
+                                            <div class="d-flex mr-3">
+                                                <h2 class="align-self-center mb-0"><i class="far fa-bell"></i></h2>
+                                            </div>
+                                            <div class="align-self-center">
+                                                <h6 class="d-inline-block mb-0"><?php echo $nombre?></h6><span class="badge badge-warning ml-2"><?php echo $fecha?></span>
+                                                <small class="d-block text-muted">ver</small>
+                                            </div>
+                                        </div>
                                         
-                                    <div class="d-flex border-bottom py-2">
-                                        <div class="d-flex mr-3">
-                                            <h2 class="align-self-center mb-0"><i class="far fa-bell"></i></h2>
-                                        </div>
-                                        <div class="align-self-center">
-                                            <h6 class="d-inline-block mb-0"><?php echo $nombre?></h6><span class="badge badge-warning ml-2"><?php echo $fecha?></span>
-                                            <small class="d-block text-muted">ver</small>
-                                        </div>
-                                    </div>
-                                    
 
-                                    <?php
+                                        <?php
+                                        }
                                     }
-                                }
-                            ?>
+                                ?>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -22,40 +22,48 @@
 
         <!-- Page Content -->
         <div id="content" class="bg-grey w-100">
-            <section class="bg-light py-3">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-9 col-md-8">
-                            <h1 class="font-weight-bold mb-0">Solicitud de mantencion </h1>
-                            <p class="lead text-muted">Rellene los datos</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
             <section>
                 <div class="container">
-                    <form>
-                        <div class="form-group">
-                            <label for="Tipo">Nombre de Mantencion</label>
-                            <input type="text" class="form-control" id="Tipo" placeholder="Ingrese aqui su mantencion">
+                    <div class="my-3">
+                        <div class="card rounded-0">
+                                <div class="card-header bg-light">
+                                    <h6 class="font-weight-bold mb-0">Solicitud</h6>
+                                </div>
+                                <div class="card-body pt-2">
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="Titulo">Nombre de Mantencion</label>
+                                            <input type="text" class="form-control" id="Titulo" placeholder="Ingrese aqui su mantencion">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="Descripcion">Descripcion</label>
+                                            <input type="text" class="form-control" id="Descripcion" placeholder="Ingrese una descripcion breve de su problema">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="Tipo">Tipo</label>
+                                            <select class="form-control" id="Tipo">
+                                                <?php
+                                                    $consulta="SELECT IDT, TIPOTITULO FROM tipo";
+                                                    $resultado= mysqli_query($conex,$consulta);
+                                                    if($resultado){
+                                                        while($row = $resultado->fetch_array()){
+                                                            $nombre = $row['IDT'];
+                                                            $titulo = $row['TIPOTITULO'];
+                                                        ?>
+                                                        <option><?php echo $titulo?></option>
+                                                        <?php
+                                                        }
+                                                    }
+                                                ?>
+                                            </select>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Enviar Solicitud</button>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="Descripcion">Descripcion</label>
-                            <input type="text" class="form-control" id="Descripcion" placeholder="Ingrese una descripcion breve de su problema">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlSelect1">Example select</label>
-                            <select class="form-control" id="exampleFormControlSelect1">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
+                    </div>
                 </div>
             </section>
         </div>
