@@ -9,7 +9,20 @@
             $consult = "INSERT INTO mantencion VALUES ('','$tipo','$titul','$descripcion','P','')";
             $resultado = mysqli_query($conex,$consult);
             if($resultado) {
-                echo "se deberia haber enviado";
+                $consulta="SELECT IDM FROM mantencion where IDT='$tipo' && TITULO='$titul' && DESCRIPCION='$descripcion'";
+                $resultado= mysqli_query($conex,$consulta);
+                if($resultado){
+                    while($row = $resultado->fetch_array()){
+                        $id = $row['IDM'];
+                    }
+                    $consult = "INSERT INTO pide VALUES (1,'$id','SYSDATE')";
+                    $resultado = mysqli_query($conex,$consult);
+                    if($resultado) {
+                        
+                    }else{
+                        echo "ha ocurrido un error";
+                    }
+                }
             }else{
                 echo "ha ocurrido un error";
             }
