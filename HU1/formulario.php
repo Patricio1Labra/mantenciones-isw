@@ -31,34 +31,35 @@
                                     <h6 class="font-weight-bold mb-0">Solicitud</h6>
                                 </div>
                                 <div class="card-body pt-2">
-                                    <form>
+                                    <form method="post" action="">
                                         <div class="form-group">
                                             <label for="Titulo">Nombre de Mantencion</label>
-                                            <input type="text" class="form-control" id="Titulo" placeholder="Ingrese aqui su mantencion">
+                                            <input type="text" class="form-control" id="Titulo" name="Titulo" placeholder="Ingrese aqui su mantencion">
                                         </div>
                                         <div class="form-group">
                                             <label for="Descripcion">Descripcion</label>
-                                            <input type="text" class="form-control" id="Descripcion" placeholder="Ingrese una descripcion breve de su problema">
+                                            <input type="text" class="form-control" id="Descripcion" name="Descripcion" placeholder="Ingrese una descripcion breve de su problema">
                                         </div>
                                         <div class="form-group">
                                             <label for="Tipo">Tipo</label>
-                                            <select class="form-control" id="Tipo">
+                                            <select class="form-control" id="Tipo" name="Tipo">
                                                 <?php
                                                     $consulta="SELECT IDT, TIPOTITULO FROM tipo";
                                                     $resultado= mysqli_query($conex,$consulta);
                                                     if($resultado){
                                                         while($row = $resultado->fetch_array()){
-                                                            $nombre = $row['IDT'];
+                                                            $id = $row['IDT'];
                                                             $titulo = $row['TIPOTITULO'];
                                                         ?>
-                                                        <option><?php echo $titulo?></option>
+                                                        <option value=<?php echo $id?>><?php echo $titulo?></option>
                                                         <?php
                                                         }
                                                     }
                                                 ?>
                                             </select>
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Enviar Solicitud</button>
+                                        <input type="submit" class="btn btn-primary" name="Enviar">
+                                        <?php include('./rellenar.php') ?>
                                     </form>
                                 </div>
                             </div>
