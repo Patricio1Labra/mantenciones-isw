@@ -16,7 +16,7 @@
                     <div id="submenu" class="sub-menu ">
                         <a href="../" class="sub-item">Solicitud de Mantención</a>
                         <a href="../" class="sub-item">Gestión de Solicitudes</a>
-                        <a href="../" class="sub-item">Programación de Mantenciones</a>
+                        <a href="../HU3/" class="sub-item">Programación de Mantenciones</a>
                         <a href="../" class="sub-item">Calendario de Mantenciones</a>
                     </div>
                 </div>
