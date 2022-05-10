@@ -1,4 +1,5 @@
-    <!-- head -->
+
+   <!-- head -->
     <?php include('../partes/head.php') ?>
     <!-- fin head -->
 

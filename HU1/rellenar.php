@@ -18,7 +18,7 @@
                     $consult = "INSERT INTO pide VALUES (1,'$id','SYSDATE()')";
                     $resultado = mysqli_query($conex,$consult);
                     if($resultado) {
-                        
+                        print "<script>window.setTimeout(function() { window.location = './index.php' }, 0);</script>";
                     }else{
                         echo "ha ocurrido un error";
                     }
