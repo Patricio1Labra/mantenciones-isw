@@ -45,32 +45,39 @@
                             </div>
                             <div class="card-body pt-2">
                                 <?php
-                                    $consulta="SELECT TITULO, DESCRIPCION,ESTADO FROM mantencion";
+                                    $consulta="SELECT IDM FROM pide WHERE IDV=1";
                                     $resultado= mysqli_query($conex,$consulta);
                                     if($resultado){
                                         while($row = $resultado->fetch_array()){
-                                            $titulo = $row['TITULO'];
-                                            $descripcion = $row['DESCRIPCION'];
-                                            $estado = $row['ESTADO'];
-                                            $color;
-                                            if ($estado == "P") $color = "badge-secondary";
-                                            if ($estado == "A") $color = "badge-success";
-                                            if ($estado == "R") $color = "badge-dark";
-                                            if ($estado == "F") $color = "badge-danger";
-                                        ?>
-                                            
-                                        <div class="d-flex border-bottom py-2">
-                                            <div class="d-flex mr-3">
-                                                <h2 class="align-self-center mb-0"><i class="far fa-bell"></i></h2>
-                                            </div>
-                                            <div class="align-self-center">
-                                                <h6 class="d-inline-block mb-0"><?php echo $titulo?></h6><span class="badge <?php echo $color?> ml-2"><?php echo $estado?></span>
-                                                <small class="d-block text-muted"><?php echo $descripcion?></small>
-                                            </div>
-                                        </div>
-                                        
+                                            $id = $row['IDM'];
+                                            $consulta="SELECT TITULO, DESCRIPCION,ESTADO FROM mantencion WHERE IDM='$id'";
+                                            $resultado1= mysqli_query($conex,$consulta);
+                                            if($resultado1){
+                                                while($row = $resultado1->fetch_array()){
+                                                    $titulo = $row['TITULO'];
+                                                    $descripcion = $row['DESCRIPCION'];
+                                                    $estado = $row['ESTADO'];
+                                                    $color;
+                                                    if ($estado == "P") $color = "badge-secondary";
+                                                    if ($estado == "A") $color = "badge-success";
+                                                    if ($estado == "R") $color = "badge-dark";
+                                                    if ($estado == "F") $color = "badge-danger";
+                                                ?>
+                                                    
+                                                <div class="d-flex border-bottom py-2">
+                                                    <div class="d-flex mr-3">
+                                                        <h2 class="align-self-center mb-0"><i class="far fa-bell"></i></h2>
+                                                    </div>
+                                                    <div class="align-self-center">
+                                                        <h6 class="d-inline-block mb-0"><?php echo $titulo?></h6><span class="badge <?php echo $color?> ml-2"><?php echo $estado?></span>
+                                                        <small class="d-block text-muted"><?php echo $descripcion?></small>
+                                                    </div>
+                                                </div>
+                                                
 
-                                        <?php
+                                                <?php
+                                                }
+                                            }
                                         }
                                     }
                                 ?>

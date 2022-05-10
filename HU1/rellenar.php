@@ -15,7 +15,7 @@
                     while($row = $resultado->fetch_array()){
                         $id = $row['IDM'];
                     }
-                    $consult = "INSERT INTO pide VALUES (1,'$id','SYSDATE')";
+                    $consult = "INSERT INTO pide VALUES (1,'$id','SYSDATE()')";
                     $resultado = mysqli_query($conex,$consult);
                     if($resultado) {
                         
