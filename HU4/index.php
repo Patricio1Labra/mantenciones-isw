@@ -32,12 +32,16 @@
                 </section>
 
                 
-
-              <section>
+                   
+                <section>
+                    <div class="container col-10">
+                            <div class="col-10 ">
+                                <div id='calendar'></div>
+                        </div>
+                    </div>
+                    
                   
-                    <div id='calendar'></div>
-                  
-              </section>
+                </section>
 
         </div>
 
