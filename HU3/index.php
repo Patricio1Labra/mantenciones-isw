@@ -24,6 +24,13 @@
                 <div class="col-12 my-3">
                     <div class="card rounded-0">
                         <div class="card-header bg-light">
+                        <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb bg-transparent">
+                            <li class="breadcrumb-item"><a href="../index.php">Inicio</a></li>
+                            <li class="breadcrumb-item">Mantencion de instalaciones</li>
+                            <li class="breadcrumb-item active" aria-current="page">Programacion de mantenciones</a></li>
+                        </ol>
+                        </nav>
                             <h6 class="font-weight-bold mb-0">Registrar mantencion</h6>
                         </div>
                         <div class="card-body pt-2">

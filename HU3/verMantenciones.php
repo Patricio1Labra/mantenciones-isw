@@ -24,17 +24,27 @@
                 <div class="col-12 my-3">
                     <div class="card rounded-0">
                         <div class="card-header bg-light">
-                            <h6 class="font-weight-bold mb-0">Ver Mantenciones</h6>
+                        <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb bg-transparent">
+                            <li class="breadcrumb-item"><a href="../index.php">Inicio</a></li>
+                            <li class="breadcrumb-item">Mantencion de instalaciones</li>
+                            <li class="breadcrumb-item"><a href="../HU3/index.php">Programacion de mantenciones</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Ver mantenciones</li>
+                        </ol>
+                        </nav>
+                        <h6 class="font-weight-bold mb-0">Ver mantenciones</h6>
                         </div>
                         <div class="card-body pt-2">
                         <div class="row justify-content-center mt-3">
         <div class="col-md-12">
-            <table class="table table-dark">
-                <thead>
+            <table class="table table-striped">
+                <thead class="table-dark">
                     <tr>
-                        <th>Titulo</th>
-                        <th>Descripcion</th>
-                        <th>Estado</th>
+                        <th scope="col">Titulo</th>
+                        <th scope="col">Descripcion</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Duracion (minutos)</th>
                     </tr>
                 </thead>
                 <tbody>
