@@ -1,28 +1,15 @@
-<?php
+<?php 
+    header('Content-Type: application/json; charset=utf8');
+    header('Access-Control-Allow-Origin: *');
+    header('Access-Control-Allow-Methods: GET, POST');
+    header("Access-Control-Allow-Headers: X-Requested-With");
 
-$pdo=new PDO("mysql:dbname=e5software_bd;host=127.0.0.1","root","");
-// Seleccionar los eventos del calendario
-$sentenciaSQL=$pdo->prepare("SELECT e.IDM,m.TITULO,m.DESCRIPCION,e.FECHA FROM ENCARGA e,MANTENCION m  WHERE e.IDM = m.IDM");
-$sentenciaSQL->execute();
+    include('../con_db.php');
 
-$eventos = [];
-
-while($resultado = $sentenciaSQL->fetchAll(PDO :: FETCH_ASSOC)){
-    $id = $resultado['IDM'];
-    $titulo = $resultado['TITULO'];
-    $descripcion = $resultado['DESCRIPCION'];
-    $fecha = $resultado['FECHA'];
-
-    $eventos[] = [
-        'id' => $id,
-        'titulo' => $titulo,
-        'descripcion' => $descripcion,
-        'fecha' => $fecha
-    ];
-
-}
-
-
-echo json_encode($eventos); 
-
-?>                      
+    $consulta = "SELECT e.IDM,m.TITULO as title,m.DESCRIPCION,DATE_FORMAT(e.FECHA,'%Y-%m-%d') as 'start' FROM ENCARGA e,MANTENCION m  WHERE e.IDM = m.IDM";
+    $resultado= mysqli_query($conex,$consulta);
+    if($resultado){
+        $prueba = mysqli_fetch_all($resultado,MYSQLI_ASSOC);
+        echo json_encode($prueba);
+    }
+?>             
