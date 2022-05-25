@@ -54,7 +54,7 @@
                         <input class="form-control" type="text" name="Descripcion" placeholder="Descripcion">
                         <br>
                         <label class="form-label" for="Fecha">Ingresar Fecha</label>
-                        <input class="form-control" type="date" name="Fecha" placeholder="Fecha">
+                        <input class="form-control" type="date" min="<?php echo date('Y-m-d'); ?>" name="Fecha" placeholder="Fecha">
                         <br>
                         <label class="form-label" for="Duracion">Ingresar Duración</label>
                         <input class="form-control" type="text" name="Duracion" placeholder="Duracion">

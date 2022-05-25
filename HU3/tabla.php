@@ -1,7 +1,7 @@
 <?php
 include("../con_db.php");
 
-$consulta = "SELECT M.TITULO, M.DESCRIPCION, M.ESTADO, EN.FECHA, EN.DURACION FROM MANTENCION M, ENCARGA EN WHERE M.IDM=EN.IDM";
+$consulta = "SELECT M.TITULO, M.DESCRIPCION, M.ESTADO,DATE_FORMAT(EN.FECHA, '%d/%m/%y') AS FECHA, EN.DURACION FROM MANTENCION M, ENCARGA EN WHERE M.IDM=EN.IDM";
 $resultado = mysqli_query($conex,$consulta);
 $verFilas = mysqli_num_rows($resultado);
 if(!$resultado){
@@ -17,6 +17,12 @@ if(!$resultado){
             </tr>";
     }else{
         while($fila=mysqli_fetch_array($resultado)){
+            if ($fila['ESTADO']=='P') {
+                $fila['ESTADO']='Pendiente';
+            }
+            if ($fila['ESTADO']=='T') {
+                $fila['ESTADO']='Terminado';
+            }
             echo'
                     <tr>
                         <td scope="row">'.$fila['TITULO'].'</td>

@@ -1,5 +1,8 @@
     <!-- head -->
     <?php include('../partes/head.php') ?>
+    <link href="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.css" rel="stylesheet" type="text/css">
+    <script src="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.js" type="text/javascript"></script>
+
     <!-- fin head -->
 
 
@@ -36,27 +39,28 @@
                         </div>
                         <div class="card-body pt-2">
                         <div class="row justify-content-center mt-3">
-        <div class="col-md-12">
-            <table class="table table-striped">
-                <thead class="table-dark">
-                    <tr>
-                        <th scope="col">Titulo</th>
-                        <th scope="col">Descripcion</th>
-                        <th scope="col">Estado</th>
-                        <th scope="col">Fecha</th>
-                        <th scope="col">Duracion (minutos)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                        include("../HU3/tabla.php");
-                    ?>
-                </tbody>
-            </table>
+                        <div class="col-md-12">
+                            <table class="table table-striped" id="tabla">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th scope="col">Titulo</th>
+                                        <th scope="col">Descripcion</th>
+                                        <th scope="col">Estado</th>
+                                        <th scope="col">Fecha</th>
+                                        <th scope="col">Duracion (minutos)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                        include("../HU3/tabla.php");
+                                    ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>                
+                </div>
+            </div>    
         </div>
     </div>
-                        
-                    </div>
-                </div>    
-            </div>
-        </div>
+    <script src="../scripts/tablaMantenciones.js"></script>  
+   

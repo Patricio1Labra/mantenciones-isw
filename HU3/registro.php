@@ -7,11 +7,23 @@ if(isset($_POST['Siguiente'])){
     $tipo = $_POST['Tipo'];
     $descripcion = $_POST['Descripcion'];
     $fecha = $_POST['Fecha'];
+    $consul ="SELECT DATE_FORMAT(SYSDATE(), '%Y-%m-%d') AS FECHA";
+                $res = mysqli_query($conex,$consul);
+                if($res) {
+                    while($valoresm = $res->fetch_array()) {
+                        $Fechasis= $valoresm[0];
+                    }
+                }
+    
+    if ($fecha<$Fechasis && $fecha!='') {
+        $fecha='1';
+        
+    }
     $duracion = $_POST['Duracion'];
     $ID;
     $IDM;
     $IDMa;
-    if(!empty($nombre) && $tipo!=0 && !empty($descripcion)){
+    if(!empty($nombre) && $tipo!=0 && !empty($descripcion) && (!empty($fecha) && $fecha!=1) && !empty($duracion)){
         $consultaidma ="SELECT MAX(IDM) as id FROM MANTENCION";
                 $res = mysqli_query($conex,$consultaidma);
                 if($res) {
@@ -54,7 +66,12 @@ if(isset($_POST['Siguiente'])){
         }
 
     }else{
+        
+        if($fecha==1){
+            echo "Fecha incorrecta (la fecha debe ser mayor o igual a la de hoy) ";    
+        }else{
         echo "rellene los campos porfavor";
+        }
     }
     
        
