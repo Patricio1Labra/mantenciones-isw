@@ -4,7 +4,7 @@ let dataTable = new DataTable(tabla,{
     perPageSelect:[5,10,15,20],
     labels: {
         placeholder: "Buscar:",
-        perPage: "Mostrar {select} Registros por pagina",
+        perPage: "Mostrar {select} Registros por página",
         noRows: "Registro no Encontrado",
         info: "Mostrando registros del {start} al {end} de {rows} Registros",
     }

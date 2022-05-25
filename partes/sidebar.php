@@ -12,7 +12,7 @@
                 <div class="item"><a href="../" class="d-block text-light p-3 border-0"><i class="fas fa-drumstick-bite"></i>Reserva de espacios comunes </a></div>
                 <div class="item"><a href="../" class="d-block text-light p-3 border-0"><i class="fas fa-drumstick-bite"></i>Visitas</a></div>
                 <div class="item">
-                    <a href="#" class="d-block text-light p-3 border-0 sub-btn"><i class="fas fa-solid fa-screwdriver-wrench"></i>Mantencion de instalaciones<i class="fas fa-caret-down drop"></i> </a>
+                    <a href="#" class="d-block text-light p-3 border-0 sub-btn"><i class="fas fa-solid fa-screwdriver-wrench"></i>Mantención de instalaciones<i class="fas fa-caret-down drop"></i> </a>
                     <div id="submenu" class="sub-menu ">
                         <a href="../" class="sub-item">Solicitud de Mantención</a>
                         <a href="../" class="sub-item">Gestión de Solicitudes</a>

@@ -1,7 +1,7 @@
 <?php
 include("../con_db.php");
 
-$consulta = "SELECT M.TITULO, M.DESCRIPCION, M.ESTADO,DATE_FORMAT(EN.FECHA, '%d/%m/%y') AS FECHA, EN.DURACION FROM MANTENCION M, ENCARGA EN WHERE M.IDM=EN.IDM";
+$consulta = "SELECT M.TITULO, M.DESCRIPCION, M.ESTADO,DATE_FORMAT(EN.FECHA, '%d/%m/%y') AS FECHA, EN.DURACION FROM MANTENCION M, ENCARGA EN WHERE M.IDM=EN.IDM ORDER BY M.ESTADO";
 $resultado = mysqli_query($conex,$consulta);
 $verFilas = mysqli_num_rows($resultado);
 if(!$resultado){

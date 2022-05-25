@@ -27,11 +27,11 @@
                         <nav aria-label="breadcrumb">
                         <ol class="breadcrumb bg-transparent">
                             <li class="breadcrumb-item"><a href="../index.php">Inicio</a></li>
-                            <li class="breadcrumb-item">Mantencion de instalaciones</li>
-                            <li class="breadcrumb-item active" aria-current="page">Programacion de mantenciones</a></li>
+                            <li class="breadcrumb-item">Mantención de instalaciones</li>
+                            <li class="breadcrumb-item active" aria-current="page">Programación de mantenciones</a></li>
                         </ol>
                         </nav>
-                            <h6 class="font-weight-bold mb-0">Registrar mantencion</h6>
+                            <h6 class="font-weight-bold mb-0">Registrar mantención</h6>
                         </div>
                         <div class="card-body pt-2">
                         <form  method="post" action="">
@@ -50,14 +50,14 @@
                         ?>
                         </select>
                         <br>
-                        <label class="form-label" for="Tipo">Ingresar Descripcion</label>
-                        <input class="form-control" type="text" name="Descripcion" placeholder="Descripcion">
+                        <label class="form-label" for="Tipo">Ingresar Descripción</label>
+                        <input class="form-control" type="text" name="Descripcion" placeholder="Descripción">
                         <br>
                         <label class="form-label" for="Fecha">Ingresar Fecha</label>
                         <input class="form-control" type="date" min="<?php echo date('Y-m-d'); ?>" name="Fecha" placeholder="Fecha">
                         <br>
                         <label class="form-label" for="Duracion">Ingresar Duración</label>
-                        <input class="form-control" type="text" name="Duracion" placeholder="Duracion">
+                        <input class="form-control" type="text" name="Duracion" placeholder="Duración">
                         <br>
                         <input class="btn btn-primary btn-sm" type="submit" name="Siguiente">
                         <a class="btn btn-success btn-sm" href="../HU3/verMantenciones.php">Ver mantenciones</a>

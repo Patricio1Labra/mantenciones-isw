@@ -70,7 +70,7 @@ if(isset($_POST['Siguiente'])){
         if($fecha==1){
             echo "Fecha incorrecta (la fecha debe ser mayor o igual a la de hoy) ";    
         }else{
-        echo "rellene los campos porfavor";
+        echo "rellene los campos por favor";
         }
     }
     

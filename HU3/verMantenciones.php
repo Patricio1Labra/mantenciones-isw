@@ -30,8 +30,8 @@
                         <nav aria-label="breadcrumb">
                         <ol class="breadcrumb bg-transparent">
                             <li class="breadcrumb-item"><a href="../index.php">Inicio</a></li>
-                            <li class="breadcrumb-item">Mantencion de instalaciones</li>
-                            <li class="breadcrumb-item"><a href="../HU3/index.php">Programacion de mantenciones</a></li>
+                            <li class="breadcrumb-item">Mantención de instalaciones</li>
+                            <li class="breadcrumb-item"><a href="../HU3/index.php">Programación de mantenciones</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Ver mantenciones</li>
                         </ol>
                         </nav>
@@ -43,11 +43,11 @@
                             <table class="table table-striped" id="tabla">
                                 <thead class="table-dark">
                                     <tr>
-                                        <th scope="col">Titulo</th>
-                                        <th scope="col">Descripcion</th>
+                                        <th scope="col">Título</th>
+                                        <th scope="col">Descripción</th>
                                         <th scope="col">Estado</th>
                                         <th scope="col">Fecha</th>
-                                        <th scope="col">Duracion (minutos)</th>
+                                        <th scope="col">Duración (minutos)</th>
                                     </tr>
                                 </thead>
                                 <tbody>
