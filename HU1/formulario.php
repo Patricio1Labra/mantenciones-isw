@@ -37,14 +37,14 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="../index.php">Inicio</a></li>
-                            <li class="breadcrumb-item">Mantencion de instalaciones</li>
-                            <li class="breadcrumb-item"><a href="./index.php">Solicitud de mantencion</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Formulario de mantencion</li>
+                            <li class="breadcrumb-item">Mantención de instalaciones</li>
+                            <li class="breadcrumb-item"><a href="./index.php">Solicitud de mantención</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Formulario de mantención</li>
                         </ol>
                     </nav>
                     <div class="row">
                         <div class="col-lg-9 col-md-8">
-                            <h1 class="font-weight-bold mb-0">Formulario de mantencion </h1>
+                            <h1 class="font-weight-bold mb-0">Formulario de mantención </h1>
                             <p class="lead text-muted">Ingrese su solicitud</p>
                         </div>
                     </div>
@@ -58,14 +58,14 @@
                                     <h6 class="font-weight-bold mb-0">Solicitud</h6>
                                 </div>
                                 <div class="card-body pt-2">
-                                    <form method="post" action="">
+                                    <form method="post" action="" class="needs-validation" novalidate>
                                         <div class="form-group">
-                                            <label for="Titulo">Nombre de Mantencion</label>
-                                            <input type="text" class="form-control" id="Titulo" name="Titulo" placeholder="Ingrese aqui su mantencion">
+                                            <label for="Titulo">Nombre de Mantención</label>
+                                            <input type="text" class="form-control" id="Titulo" name="Titulo" placeholder="Ingrese aqui su mantención" required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="Descripcion">Descripcion</label>
-                                            <input type="text" class="form-control" id="Descripcion" name="Descripcion" placeholder="Ingrese una descripcion breve de su problema">
+                                            <label for="Descripcion">Descripción</label>
+                                            <input type="text" class="form-control" id="Descripcion" name="Descripcion" placeholder="Ingrese una descripcion breve de su problema" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="Tipo">Tipo</label>
@@ -108,6 +108,23 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js" integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
+    <script>
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+            var forms = document.getElementsByClassName('needs-validation');
+            var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+            });
+        }, false);
+    })();
+    </script>
 </body>
 
 </html>
