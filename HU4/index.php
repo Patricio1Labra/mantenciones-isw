@@ -21,6 +21,7 @@
     <!-- Fin Navbar -->
 
         <!-- Page Content -->
+
             <div id="content" class="bg-grey w-100">
                     <section class="bg-light py-3">
                         <div class="container">
@@ -28,6 +29,13 @@
                                 <div class="col-lg-9 col-md-8">
                                     <h1 class="font-weight-bold mb-0">Calendario de Mantenciones </h1>
                                     <p class="lead text-muted">Programa de Mantención y Agenda</p>
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb bg-transparent">
+                                            <li class="breadcrumb-item"><a href="../index.php">Inicio</a></li>
+                                            <li class="breadcrumb-item">Mantencion de Instalaciones</li>
+                                            <li class="breadcrumb-item active" aria-current="page">Calendario</li>
+                                        </ol>
+                                        </nav>
                                 </div>
                                 
                             </div>
