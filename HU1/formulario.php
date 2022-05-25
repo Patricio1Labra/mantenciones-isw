@@ -1,28 +1,55 @@
+
+    <!-- Con_DB -->
+        <?php include("../con_db.php") ?>
+    <!-- Fin Con_DB -->
+
     <!-- head -->
-    <?php include('../partes/head.php') ?>
+        <?php include('./partes/headformulario.php') ?>
     <!-- fin head -->
 
+    <!-- session -->
+        <?php include('./session.php') ?>
+    <!-- fin session -->
 
 <body>
     <div class="d-flex" id="content-wrapper">
+    
     <!-- sideBar -->
-    <!-- sideBar -->
-    <?php include('../partes/sidebar.php') ?>
+    <?php 
+        if($tipo=="vecino"){
+            include('./partes/sidebarvecino.php');
+        }else{
+            include('./partes/sidebar.php');
+        }
+    ?>
     <!-- fin sideBar -->
 
         <div class="w-100">
 
     <!-- Navbar -->
-        <?php include('../partes/nav.php') ?>
+        <?php include('./partes/nav.php') ?>
     <!-- Fin Navbar -->
-
-    <!-- Con_DB -->
-    <?php include('../con_db.php') ?>
-    <!-- Fin Con_DB -->
 
         <!-- Page Content -->
         <div id="content" class="bg-grey w-100">
-
+            <section class="bg-light py-3">
+                <div class="container">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="../index.php">Inicio</a></li>
+                            <li class="breadcrumb-item">Mantencion de instalaciones</li>
+                            <li class="breadcrumb-item"><a href="./index.php">Solicitud de mantencion</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Formulario de mantencion</li>
+                        </ol>
+                    </nav>
+                    <div class="row">
+                        <div class="col-lg-9 col-md-8">
+                            <h1 class="font-weight-bold mb-0">Formulario de mantencion </h1>
+                            <p class="lead text-muted">Ingrese su solicitud</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section>
                 <div class="container">
                     <div class="my-3">
