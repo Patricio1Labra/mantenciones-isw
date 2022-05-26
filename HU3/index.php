@@ -57,7 +57,7 @@
                         <input class="form-control" type="date" min="<?php echo date('Y-m-d'); ?>" name="Fecha" placeholder="Fecha">
                         <br>
                         <label class="form-label" for="Duracion">Ingresar Duración</label>
-                        <input class="form-control" type="text" name="Duracion" placeholder="Duración">
+                        <input class="form-control" type="text" name="Duracion" placeholder="Duración(en minutos)">
                         <br>
                         <input class="btn btn-primary btn-sm" type="submit" name="Siguiente">
                         <a class="btn btn-success btn-sm" href="../HU3/verMantenciones.php">Ver mantenciones</a>
