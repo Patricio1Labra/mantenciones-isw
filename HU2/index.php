@@ -62,14 +62,33 @@
                               <th class="text-center">Tipo</th>
                               <th class="text-center">Titulo</th>
                               <th class="text-center">Descripcion</th>
-                              <th class="text-center">Fecha</th>
+                              <th class="text-center">Fecha solicitud</th>
                               <th class="text-center">Costo</th>
                               <th class="text-center">Estado</th>
                               <th class="text-center">Acciones</th>
                          </thead>
                          <tbody>
                              <tr>
+                             <?php
+                                include('../con_db.php');
+                                $consulta = "SELECT t.TIPOTITULO,m.TITULO,m.DESCRIPCION,p.FECHA,m.COSTO,m.ESTADO FROM ENCARGA e,MANTENCION m, TIPO t, PIDE p  WHERE e.IDM = m.IDM";
+                                $resultado = mysqli_query($conex,$consulta);
+                                if($resultado){
+                                    while($row = $resultado->fetch_array()){
+                                        echo'
+                                <tr>
+                                    <td>'.$row["TIPOTITULO"].'</td>
+                                    <td>'.$row["TITULO"].'</td>
+                                    <td>'.$row["DESCRIPCION"].'</td>
+                                    <td>'.$row["FECHA"].'</td>
+                                    <td>'.$row["COSTO"].'</td>
+                                    <td>'.$row["ESTADO"].'</td>
+                                </tr>
+                                ';
 
+                                    }
+                                }
+                                ?>                    
                             </tr>
                         </tbody>
                      </table>
