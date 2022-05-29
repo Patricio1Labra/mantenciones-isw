@@ -1,5 +1,9 @@
-    <!-- head -->
-        <?php include('../partes/head.php') ?>
+<!-- head -->
+
+        <?php 
+        session_start();
+        include('../partes/head.php') 
+        ?>
     <!-- fin head -->
 
 

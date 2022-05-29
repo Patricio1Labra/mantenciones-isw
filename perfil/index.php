@@ -1,6 +1,9 @@
 
     <!-- head -->
-        <?php include('../partes/head.php') ?>
+    
+        <?php 
+        session_start();
+        include('../partes/head.php') ?>
     <!-- fin head -->
 
 <body>
@@ -22,7 +25,7 @@
                   <div class="container">
                       <div class="row">
                           <div class="col-lg-9 col-md-8">
-                            <h1 class="font-weight-bold mb-0">Perfil de JuanÍto</h1>
+                            <h1 class="font-weight-bold mb-0">Perfil de <?php echo $_SESSION['nombre']; ?></h1>
                             <p class="lead text-muted">Este es tu perfil</p>
                           </div>
                          
