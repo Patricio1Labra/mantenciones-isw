@@ -1,27 +1,23 @@
 
     <!-- Con_DB -->
-        <?php include("../con_db.php") ?>
+    <?php include("../con_db.php") ?>
     <!-- Fin Con_DB -->
-
-    <!-- head -->
-        <?php include('./partes/headformulario.php') ?>
-    <!-- fin head -->
 
     <!-- session -->
         <?php include('./session.php') ?>
     <!-- fin session -->
 
+    <!-- head -->
+        <?php include('./partes/head.php') ?>
+        <title>Formulario Mantencion - Grupo 5</title>
+    </head>
+    <!-- fin head -->
+
 <body>
     <div class="d-flex" id="content-wrapper">
     
     <!-- sideBar -->
-    <?php 
-        if($tipo=="vecino"){
-            include('./partes/sidebarvecino.php');
-        }else{
-            include('./partes/sidebar.php');
-        }
-    ?>
+        <?php include('./partes/sidebar.php') ?>
     <!-- fin sideBar -->
 
         <div class="w-100">
@@ -35,7 +31,7 @@
             <section class="bg-light py-3">
                 <div class="container">
                     <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
+                        <ol class="breadcrumb bg-transparent">
                             <li class="breadcrumb-item"><a href="../index.php">Inicio</a></li>
                             <li class="breadcrumb-item">Mantención de instalaciones</li>
                             <li class="breadcrumb-item"><a href="./index.php">Solicitud de mantención</a></li>
@@ -60,30 +56,45 @@
                                 <div class="card-body pt-2">
                                     <form method="post" action="" class="needs-validation" novalidate>
                                         <div class="form-group">
-                                            <label for="Titulo">Nombre de Mantención</label>
-                                            <input type="text" class="form-control" id="Titulo" name="Titulo" placeholder="Ingrese aqui su mantención" required>
+                                            <div class="col">
+                                                <label for="Titulo">Nombre de Mantención</label>
+                                                <input type="text" class="form-control" id="Titulo" name="Titulo" placeholder="Ingrese aqui su mantención" required>
+                                                <div class="invalid-tooltip">
+                                                    Ingrese un nombre
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="Descripcion">Descripción</label>
-                                            <input type="text" class="form-control" id="Descripcion" name="Descripcion" placeholder="Ingrese una descripcion breve de su problema" required>
+                                            <div class="col">
+                                                <label for="Descripcion">Descripción</label>
+                                                <input type="text" class="form-control" id="Descripcion" name="Descripcion" placeholder="Ingrese una descripcion breve de su problema" required>
+                                                <div class="invalid-tooltip">
+                                                    Ingrese una descripción
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="Tipo">Tipo</label>
-                                            <select class="form-control" id="Tipo" name="Tipo">
-                                                <?php
-                                                    $consulta="SELECT IDT, TIPOTITULO FROM TIPO";
-                                                    $resultado= mysqli_query($conex,$consulta);
-                                                    if($resultado){
-                                                        while($row = $resultado->fetch_array()){
-                                                            $id = $row['IDT'];
-                                                            $titulo = $row['TIPOTITULO'];
-                                                        ?>
-                                                        <option value=<?php echo $id?>><?php echo $titulo?></option>
-                                                        <?php
+                                            <div class="col">
+                                                <label for="Tipo">Tipo</label>
+                                                <select class="form-control" id="Tipo" name="Tipo" required>
+                                                    <?php
+                                                        $consulta="SELECT IDT, TIPOTITULO FROM TIPO";
+                                                        $resultado= mysqli_query($conex,$consulta);
+                                                        if($resultado){
+                                                            while($row = $resultado->fetch_array()){
+                                                                $id = $row['IDT'];
+                                                                $titulo = $row['TIPOTITULO'];
+                                                            ?>
+                                                            <option value=<?php echo $id?>><?php echo $titulo?></option>
+                                                            <?php
+                                                            }
                                                         }
-                                                    }
-                                                ?>
-                                            </select>
+                                                    ?>
+                                                </select>
+                                                <div class="invalid-tooltip">
+                                                    Ingrese un tipo
+                                                </div>
+                                            </div>
                                         </div>
                                         <input type="submit" class="btn btn-primary" name="Enviar">
                                         <?php include('./rellenar.php') ?>

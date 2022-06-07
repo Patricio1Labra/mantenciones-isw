@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -24,6 +24,3 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
-    
-    <title>Formulario Mantencion - Grupo 5</title>
-</head>

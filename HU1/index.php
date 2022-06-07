@@ -1,27 +1,23 @@
 
     <!-- Con_DB -->
-        <?php include("../con_db.php") ?>
+    <?php include("../con_db.php") ?>
     <!-- Fin Con_DB -->
-
-    <!-- head -->
-        <?php include('./partes/headindex.php') ?>
-    <!-- fin head -->
 
     <!-- session -->
         <?php include('./session.php') ?>
     <!-- fin session -->
 
+    <!-- head -->
+        <?php include('./partes/head.php') ?>
+        <title>Solicitud Mantención - Grupo 5</title>
+    </head>
+    <!-- fin head -->
+
 <body>
     <div class="d-flex" id="content-wrapper">
     
     <!-- sideBar -->
-    <?php 
-        if($tipo=="vecino"){
-            include('./partes/sidebarvecino.php');
-        }else{
-            include('./partes/sidebar.php');
-        }
-    ?>
+        <?php include('./partes/sidebar.php');?>
     <!-- fin sideBar -->
 
         <div class="w-100">
@@ -37,7 +33,7 @@
             <section class="bg-light py-3">
                 <div class="container">
                     <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
+                        <ol class="breadcrumb bg-transparent">
                             <li class="breadcrumb-item"><a href="../index.php">Inicio</a></li>
                             <li class="breadcrumb-item">Mantención de instalaciones</li>
                             <li class="breadcrumb-item active" aria-current="page">Solicitud de mantención</li>
