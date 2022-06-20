@@ -1,3 +1,10 @@
+<?php
+    if (!isset($_SESSION['rol'])) {
+        header("Location: ../../login.php");
+    }else{
+       
+    }
+?>
 <!doctype html>
 <html lang="es">
 <head>

@@ -1,6 +1,8 @@
 
     <!-- head -->
-        <?php include('../partes/head.php') ?>
+        <?php 
+        session_start();
+        include('../partes/head.php') ?>
     <!-- fin head -->
 
 <body>

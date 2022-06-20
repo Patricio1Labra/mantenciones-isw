@@ -1,4 +1,5 @@
 <?php 
+    $id=$_SESSION['ID'];
     $consulta="SELECT m.TITULO, m.DESCRIPCION, m.ESTADO, DATE_FORMAT(p.FECHA, '%d/%m/%Y') AS FECHA FROM MANTENCION m, PIDE p WHERE IDV='$id' AND m.IDM=p.IDM";
     $resultado= mysqli_query($conex,$consulta);
     $verFilas = mysqli_num_rows($resultado);

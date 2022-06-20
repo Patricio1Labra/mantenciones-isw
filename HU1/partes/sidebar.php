@@ -14,17 +14,11 @@
         <div class="item">
             <a href="#" class="d-block text-light p-3 border-0 sub-btn"><i class="fas fa-solid fa-screwdriver-wrench"></i>Mantención de instalaciones<i class="fas fa-caret-down drop"></i> </a>
             <div id="submenu" class="sub-menu ">
-                <?php 
-                    if($tipo=="vecino"){ ?>
-                    <a href="./index.php" class="sub-item">Solicitud de Mantención</a>
-                <?php }
-                    if($tipo=="vecin"){ ?>
+                <?php if ($_SESSION['rol'] == 1){?> 
                     <a href="../" class="sub-item">Gestión de Solicitudes</a>
-                <?php }
-                    if($tipo=="veci"){ ?>
-                    <a href="../" class="sub-item">Programación de Mantenciones</a>
-                <?php }
-                    if($tipo=="vec"){ ?>
+                    <a href="../" class="sub-item">Programación de Mantenciones</a>    
+                <?php }else{?>
+                    <a href="../HU1/" class="sub-item">Solicitud de Mantención</a>                        
                     <a href="../" class="sub-item">Calendario de Mantenciones</a>
                 <?php } ?>
             </div>

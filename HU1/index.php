@@ -3,12 +3,19 @@
     <?php include("../con_db.php") ?>
     <!-- Fin Con_DB -->
 
-    <!-- session -->
-        <?php include('./session.php') ?>
-    <!-- fin session -->
-
     <!-- head -->
-        <?php include('./partes/head.php') ?>
+        <?php 
+        session_start();
+        if (!isset($_SESSION['rol'])) {
+            header("Location: ../login.php");
+        }else{
+            if ($_SESSION['rol'] != 2) {
+                header("Location: ../inicio/index.php");
+            }
+    
+        }
+        include('./partes/head.php');
+        ?>
         <title>Solicitud Mantención - Grupo 5</title>
     </head>
     <!-- fin head -->

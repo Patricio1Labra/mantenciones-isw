@@ -14,10 +14,14 @@
                 <div class="item">
                     <a href="#" class="d-block text-light p-3 border-0 sub-btn"><i class="fas fa-solid fa-screwdriver-wrench"></i>Mantencion de instalaciones<i class="fas fa-caret-down drop"></i> </a>
                     <div id="submenu" class="sub-menu ">
-                        <a href="../HU1/index.php" class="sub-item">Solicitud de Mantención</a>
-                        <a href="../" class="sub-item">Gestión de Solicitudes</a>
-                        <a href="../" class="sub-item">Programación de Mantenciones</a>
-                        <a href="../" class="sub-item">Calendario de Mantenciones</a>
+                        <?php if ($_SESSION['rol'] == 1){?> 
+                            <a href="../" class="sub-item">Gestión de Solicitudes</a>
+                            <a href="../" class="sub-item">Programación de Mantenciones</a>    
+                        <?php }else{?>
+                            <a href="../HU1/" class="sub-item">Solicitud de Mantención</a>                        
+                            <a href="../" class="sub-item">Calendario de Mantenciones</a>
+                        <?php } ?>
+
                     </div>
                 </div>
                 <div class="item"><a href="../" class="d-block text-light p-3 border-0"><i class="fas fa-chart-line"></i>Estadísticas</a></div>
