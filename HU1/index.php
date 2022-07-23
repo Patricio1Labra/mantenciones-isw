@@ -16,6 +16,8 @@
         }
         include('./partes/head.php');
         ?>
+        <link href="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.css" rel="stylesheet" type="text/css">
+        <script src="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.js" type="text/javascript"></script>
         <title>Solicitud Mantención - Grupo 5</title>
     </head>
     <!-- fin head -->
@@ -81,6 +83,7 @@
                     </div>
                 </div>
             </section>
+
         </div>
 
     <!-- Optional JavaScript -->
@@ -95,7 +98,21 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js" integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
-        
+
+    <script>
+        let tabla = document.querySelector("#tabla");
+        let dataTable = new DataTable(tabla,{
+        perPage:10,
+        perPageSelect:[5,10,15,20],
+        labels: {
+            placeholder: "Buscar:",
+            perPage: "Mostrar {select} Registros por página",
+            noRows: "Registro no Encontrado",
+            info: "Mostrando registros del {start} al {end} de {rows} Registros",
+        }
+        });
+    </script>
+
 </body>
 
 </html>

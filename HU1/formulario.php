@@ -65,7 +65,7 @@
                                         <div class="form-group">
                                             <div class="col">
                                                 <label for="Titulo">Nombre de Mantención</label>
-                                                <input type="text" class="form-control" id="Titulo" name="Titulo" placeholder="Ingrese aqui su mantención" required>
+                                                <input type="text" class="form-control" id="Titulo" name="Titulo" placeholder="Ingrese aqui su mantención" onkeypress="return valideKey(event);" required>
                                                 <div class="invalid-tooltip">
                                                     Ingrese un nombre
                                                 </div>
@@ -74,7 +74,7 @@
                                         <div class="form-group">
                                             <div class="col">
                                                 <label for="Descripcion">Descripción</label>
-                                                <input type="text" class="form-control" id="Descripcion" name="Descripcion" placeholder="Ingrese una descripcion breve de su problema" required>
+                                                <input type="text" class="form-control" id="Descripcion" name="Descripcion" placeholder="Ingrese una descripcion breve de su problema" onkeypress="return valideKey(event);" required>
                                                 <div class="invalid-tooltip">
                                                     Ingrese una descripción
                                                 </div>
@@ -143,6 +143,30 @@
         }, false);
     })();
     </script>
+
+    <script>
+        function valideKey(evt){
+            var code = (evt.which) ? evt.which : evt.keyCode;
+            if(code >= 48 && code <= 57){
+                return true;
+            } else {
+                if(code >= 65 && code <= 90){
+                    return true;
+                }else{
+                    if(code >= 97 && code <= 122){
+                        return true;
+                    }else{
+                        if(code == 32){
+                            return true;
+                        }else{
+                            return false;
+                        }
+                     }
+                }
+            }
+        }
+    </script>
+
 </body>
 
 </html>
