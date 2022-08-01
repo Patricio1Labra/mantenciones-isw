@@ -11,26 +11,32 @@
     line-height: 60%;
 }
 #sidebar-container .menu .item a:hover{
-    background: blue;
+    background: #202A5F;
     transition: 0.3s ease;
 }
 #sidebar-container .menu .item i{
     margin-right: 10px;
 }
 
-#sidebar-container .menu .item a .drop{
+#sidebar-container .menu .item a .drop {
     position: absolute;
     font-size: 25px;
     margin-left : 15px;
     transition: 0.3s ease;
     
+    
 }
+#sidebar-container .menu .item #s-menu i {
+    color: white;
+}
+
 #sidebar-container .menu .item .sub-menu{
     background: rgba(255, 255, 255, 0);
     display: none;
 }
 #sidebar-container .menu .item .show{
     display: block;
+    
 }
 #sidebar-container .menu .item .sub-menu a{
     padding-left: 5px;
@@ -40,5 +46,19 @@
     font-size: 17px;
     line-height: 90%;
     margin: 10px 20px;
+    
+}
+#sidebar-container .menu .item #submenu{
+    background-color: #2f386a;
+    
+    
+}
+#sidebar-container .menu .item #submenu a{
+    margin: 0px;
+    padding-left: 50px;
+    padding-top: 20px;
+    padding-bottom: 15px;
+
+    
     
 }

@@ -46,13 +46,13 @@
                             <h6 class="font-weight-bold mb-0">Registrar mantención</h6>
                         </div>
                         <div class="card-body pt-2">
-                        <form  method="post" action="">
+                        <form class="needs-validation" novalidate method="post" action="">
                         <label class="form-label" for="Nombre">Ingresar Título</label>    
-                        <input class="form-control" type="text" name="Nombre" placeholder="Nombre">
+                        <input class="form-control" required type="text" name="Nombre" placeholder="Nombre" onkeypress="return valideKey(event);">
                         <br>
                         <label class="form-label" for="Tipo">Ingresar Tipo</label>
-                        <select class="form-control" name="Tipo" id="">
-                        <option value="0">Seleccionar Tipo</option>
+                        <select class="form-control" name="Tipo" id="" required>
+                        <option value="" hidden>Seleccionar Tipo</option>
                         <?php
                             $sqlc = "SELECT `IDT` as id , `TIPOTITULO` as nombre FROM `TIPO`";
                             $resultadoc= mysqli_query($conex,$sqlc);
@@ -63,16 +63,16 @@
                         </select>
                         <br>
                         <label class="form-label" for="Tipo">Ingresar Descripción</label>
-                        <input class="form-control" type="text" name="Descripcion" placeholder="Descripción">
+                        <input class="form-control" required type="text" name="Descripcion" placeholder="Descripción" onkeypress="return valideKey(event);">
                         <br>
                         <label class="form-label" for="Fecha">Ingresar Fecha</label>
-                        <input class="form-control" type="date" min="<?php echo date('Y-m-d'); ?>" name="Fecha" placeholder="Fecha">
+                        <input class="form-control" required type="date" min="<?php echo date('Y-m-d'); ?>" name="Fecha" placeholder="Fecha">
                         <br>
                         <label class="form-label" for="Duracion">Ingresar Duración</label>
-                        <input class="form-control" type="text" name="Duracion" placeholder="Duración(en minutos)">
+                        <input class="form-control" required type="number" name="Duracion" placeholder="Duración(en minutos)" onkeypress="return valideKey(event);">
                         <br>
                         <input class="btn btn-primary btn-sm" type="submit" name="Siguiente">
-                        <a class="btn btn-success btn-sm" href="../HU3/verMantenciones.php">Ver mantenciones</a>
+                        <a class="btn btn-success border-0 btn-sm" href="../HU3/verMantenciones.php">Ver mantenciones</a>
                         <?php
                             include("../HU3/registro.php");
                         ?>
@@ -81,6 +81,45 @@
                 </div>    
             </div>
         </div>
+        <script>
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+            var forms = document.getElementsByClassName('needs-validation');
+            var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+            });
+        }, false);
+    })();
+    </script>
+        <script>
+        function valideKey(evt){
+            var code = (evt.which) ? evt.which : evt.keyCode;
+            if(code >= 48 && code <= 57){
+                return true;
+            } else {
+                if(code >= 65 && code <= 90){
+                    return true;
+                }else{
+                    if(code >= 97 && code <= 122){
+                        return true;
+                    }else{
+                        if(code == 32){
+                            return true;
+                        }else{
+                            return false;
+                        }
+                     }
+                }
+            }
+        }
+    </script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

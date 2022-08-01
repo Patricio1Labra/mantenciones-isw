@@ -12,7 +12,7 @@
                 <div class="item"><a href="../" class="d-block text-light p-3 border-0"><i class="fas fa-drumstick-bite"></i>Reserva de espacios comunes </a></div>
                 <div class="item"><a href="../" class="d-block text-light p-3 border-0"><i class="fas fa-drumstick-bite"></i>Visitas</a></div>
                 <div class="item">
-                    <a href="#" class="d-block text-light p-3 border-0 sub-btn"><i class="fas fa-solid fa-screwdriver-wrench"></i>Mantención de instalaciones<i class="fas fa-caret-down drop"></i> </a>
+                    <a id="s-menu" class="d-block user-select-none p-3 border-0 sub-btn drop"><i class="fas fa-solid fa-screwdriver-wrench"></i>Mantención de instalaciones<i id="icono" class="fas fa-caret-down drop"></i> </a>
                     <div id="submenu" class="sub-menu ">
                         <?php if ($_SESSION['rol'] == 1){?> 
                             <a href="../" class="sub-item">Gestión de Solicitudes</a>

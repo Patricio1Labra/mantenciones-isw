@@ -36,7 +36,7 @@ if(isset($_POST['Siguiente'])){
         $resultado = mysqli_query($conex,$consulta);
         if($resultado) {
             if(!empty($fecha) && !empty($duracion)){
-                $ID = $_SESSION['IDE'];
+                $ID = $_SESSION['ID'];
                 $consultaidm ="SELECT MAX(IDM) as id FROM MANTENCION  WHERE IDT ='$tipo' && TITULO ='$nombre' && DESCRIPCION ='$descripcion'";
                 $res = mysqli_query($conex,$consultaidm);
                 if($res) {
