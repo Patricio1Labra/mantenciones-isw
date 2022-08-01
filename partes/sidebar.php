@@ -18,7 +18,7 @@
                             <a href="../" class="sub-item">Gestión de Solicitudes</a>
                             <a href="../HU3/" class="sub-item">Programación de Mantenciones</a>    
                         <?php }else{?>
-                        <a href="../" class="sub-item">Solicitud de Mantención</a>                        
+                        <a href="../HU1/" class="sub-item">Solicitud de Mantención</a>                        
                         <a href="../" class="sub-item">Calendario de Mantenciones</a>
                         <?php } ?>
                     </div>
@@ -28,5 +28,10 @@
                 <div class="item"><a href="../" class="d-block text-light p-3 border-0"><i class="fas fa-sliders-h"></i>Configuración</a></div>
             </div>
         </div>
-        <script src="../scripts/sidebar.js"></script>
-        <!-- Fin sidebar -->
+        <div class="item"><a href="../" class="d-block text-light p-3 border-0"><i class="fas fa-chart-line"></i>Estadísticas</a></div>
+        <div class="item"><a href="../perfil/" class="d-block text-light p-3 border-0"><i class="fas fa-user"></i>Perfil</a></div>
+        <div class="item"><a href="../" class="d-block text-light p-3 border-0"><i class="fas fa-sliders-h"></i>Configuración</a></div>
+    </div>
+</div>
+<script src="../scripts/sidebar.js"></script>
+<!-- Fin sidebar -->
