@@ -15,7 +15,7 @@
         <a id="s-menu" class="d-block user-select-none p-3 border-0 sub-btn drop"><i class="fas fa-solid fa-screwdriver-wrench"></i>Mantención de instalaciones<i id="icono" class="fas fa-caret-down drop"></i> </a>
             <div id="submenu" class="sub-menu ">
                 <?php if ($_SESSION['rol'] == 1){?> 
-                    <a href="../" class="sub-item">Gestión de Solicitudes</a>
+                    <a href="../HU2/" class="sub-item">Gestión de Solicitudes</a>
                     <a href="../HU3/" class="sub-item">Programación de Mantenciones</a>    
                 <?php }else{?>
                     <a href="../HU1/" class="sub-item">Solicitud de Mantención</a>                        
