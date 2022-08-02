@@ -63,7 +63,7 @@
                               <th class="text-center">Titulo</th>
                               <th class="text-center">Descripcion</th>
                               <th class="text-center">Fecha solicitud</th>
-                              <th class="text-center">Costo</th>
+                              <th class="text-center">Vecino</th>
                               <th class="text-center">Estado</th>
                               <th class="text-center">Acciones</th>
                          </thead>
@@ -71,21 +71,27 @@
                              <tr>
                              <?php
                                 include('../con_db.php');
-                                $consulta = "SELECT t.TIPOTITULO,m.TITULO,m.DESCRIPCION,p.FECHA,m.COSTO,m.ESTADO FROM ENCARGA e,MANTENCION m, TIPO t, PIDE p  WHERE e.IDM = m.IDM";
+                                $consulta = "SELECT t.TIPOTITULO,m.TITULO,m.DESCRIPCION,p.FECHA,m.ESTADO,v.RUT FROM ENCARGA e,MANTENCION m, TIPO t, PIDE p, VECINO v  WHERE e.IDM = m.IDM and v.IDV=p.IDV";
                                 $resultado = mysqli_query($conex,$consulta);
                                 if($resultado){
                                     while($row = $resultado->fetch_array()){
+                                        if ($row['ESTADO']=='P') {
+                                            $row['ESTADO']='Pendiente';
+                                        }
+                                        if ($row['ESTADO']=='T') {
+                                            $row['ESTADO']='Terminado';
+                                        }
                                         echo'
                                 <tr>
                                     <td>'.$row["TIPOTITULO"].'</td>
                                     <td>'.$row["TITULO"].'</td>
                                     <td>'.$row["DESCRIPCION"].'</td>
                                     <td>'.$row["FECHA"].'</td>
-                                    <td>'.$row["COSTO"].'</td>
+                                    <td>'.$row["RUT"].'</td>
                                     <td>'.$row["ESTADO"].'</td>
+                                    <td><button class="btn btn-success w-100">Editar estado</button></td>
                                 </tr>
                                 ';
-
                                     }
                                 }
                                 ?>                    
