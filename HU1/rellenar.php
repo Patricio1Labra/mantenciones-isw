@@ -4,6 +4,7 @@
     if(isset($_POST['Enviar'])){
         $titul = $_POST['Titulo'];
         $tipo = $_POST['Tipo'];
+        $idv = $_SESSION['ID'];
         $descripcion = $_POST['Descripcion'];
         if(!empty($titul) && !empty($tipo) && !empty($descripcion)){
             $consult = "INSERT INTO MANTENCION VALUES (default,'$tipo','$titul','$descripcion','P','')";
@@ -15,7 +16,7 @@
                     while($row = $resultado->fetch_array()){
                         $id = $row['IDM'];
                     }
-                    $consult = "INSERT INTO PIDE VALUES (1,'$id',SYSDATE())";
+                    $consult = "INSERT INTO PIDE VALUES ('$idv','$id',SYSDATE())";
                     $resultado = mysqli_query($conex,$consult);
                     if($resultado) {
                         print "<script>window.setTimeout(function() { window.location = './index.php' }, 0);</script>";
