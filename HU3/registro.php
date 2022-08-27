@@ -6,7 +6,13 @@ if(isset($_POST['Siguiente'])){
     $nombre = $_POST['Nombre'];
     $tipo = $_POST['Tipo'];
     $descripcion = $_POST['Descripcion'];
+    $duracion = $_POST['Duracion'];
     $fecha = $_POST['Fecha'];
+    $hora = $_POST['Hora'];
+    $fe = $fecha.' '.$hora.':00';
+    $f= new DateTime($fe);
+    $f->modify('+'.$duracion.' minute');
+    $fec= $f->format('Y-m-d H:i:s');
     $consul ="SELECT DATE_FORMAT(SYSDATE(), '%Y-%m-%d') AS FECHA";
                 $res = mysqli_query($conex,$consul);
                 if($res) {
@@ -19,7 +25,7 @@ if(isset($_POST['Siguiente'])){
         $fecha='1';
         
     }
-    $duracion = $_POST['Duracion'];
+    
     $ID;
     $IDM;
     $IDMa;
@@ -44,9 +50,16 @@ if(isset($_POST['Siguiente'])){
                         $IDM= $valoresm['id'];
                     }
                 }
-                $consulta = "INSERT INTO ENCARGA VALUES ('$ID','$IDM','$fecha','$duracion')";
+                $consulta = "INSERT INTO ENCARGA VALUES ('$ID','$IDM','$fe','','$duracion')";
                 $resultado = mysqli_query($conex,$consulta);
                 if($resultado) {
+                    echo "<script>";
+            echo "Swal.fire({
+                icon: 'success',
+                title: 'Mantencion registrada con exito',
+                text: '".$fec."'
+              })";
+            echo "</script>";
                     
                     
                 }else{

@@ -68,6 +68,9 @@
                         <label class="form-label" for="Fecha">Ingresar Fecha</label>
                         <input class="form-control" required type="date" min="<?php echo date('Y-m-d'); ?>" name="Fecha" placeholder="Fecha">
                         <br>
+                        <label class="form-label" for="Duracion">Ingresar Hora de inicio</label>
+                        <input class="form-control" required type="time" name="Hora">
+                        <br>
                         <label class="form-label" for="Duracion">Ingresar Duración</label>
                         <input class="form-control" required type="number" name="Duracion" placeholder="Duración(en minutos)" onkeypress="return valideKey(event);">
                         <br>
