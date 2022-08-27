@@ -36,7 +36,7 @@ if(isset($_POST['Siguiente'])){
         $resultado = mysqli_query($conex,$consulta);
         if($resultado) {
             if(!empty($fecha) && !empty($duracion)){
-                $consultaid ="SELECT IDE as id FROM ENCARGADO  WHERE NOMBRE ='Juan ito'";
+                $consultaid ="SELECT IDE as id FROM ENCARGADO  WHERE NOMBRE ='Jorge'";
                 $res = mysqli_query($conex,$consultaid);
                 if($res) {
                     while($valores = $res->fetch_array()) {
