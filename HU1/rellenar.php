@@ -29,15 +29,26 @@
                     if($resultado) {
                         print "<script>window.setTimeout(function() { window.location = './index.php' }, 0);</script>";
                     }else{
+                        #Insert en pide con error
                         echo "ha ocurrido un error";
                     }
+                }else{
+                    #IDM no encontrado
+                    "ha ocurrido un error";
                 }
             }else{
+                #Insert en mantencion con error
                 echo "ha ocurrido un error";
             }
-
         }else{
-            echo "rellene los campos porfavor";
+            #campos vacios
+            echo "<script>";
+            echo "Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Los campos estan vacios'
+              })";
+            echo "</script>";
         }
     }
 ?>
