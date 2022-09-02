@@ -64,12 +64,12 @@
                     <div class="my-2">
                         <div class="card rounded-0">
                             <table class="table table-striped" id="tabla">
-                                <thead class="bg-azul">
+                                <thead class="bg-primary">
                                     <tr>
-                                        <th scope="col">Título</th>
-                                        <th scope="col">Descripción</th>
-                                        <th scope="col">Fecha Solicitado</th>
-                                        <th scope="col">Estado</th>
+                                        <th scope="col" class="text-light">Título</th>
+                                        <th scope="col" class="text-light">Descripción</th>
+                                        <th scope="col" class="text-light">Fecha Solicitado</th>
+                                        <th scope="col" class="text-light">Estado</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -87,6 +87,14 @@
 
         <?php include('../partes/optionaljavascript.php') ?>
         <script src="../scripts/datatable.js"></script>
+        <style>
+            .dataTable-sorter::after{
+                border-bottom: 4px solid white;
+            }
+            .dataTable-sorter::before{
+                border-top: 4px solid white;
+            }
+        </style>
 
 </body>
 
