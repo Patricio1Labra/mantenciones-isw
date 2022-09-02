@@ -64,7 +64,7 @@
                                         <div class="form-group">
                                             <div class="col">
                                                 <label for="Titulo" id="Nombre">Nombre de Mantención</label>
-                                                <input type="text" class="form-control" id="Titulo" name="Titulo" placeholder="Ingrese aquí su mantención" onkeypress="return valideKey(event);" required>
+                                                <input type="text" class="form-control" id="Titulo" name="Titulo" placeholder="Ingrese aquí su mantención" onkeypress="return valideKey(event);"  required>
                                                 <div class="invalid-tooltip">
                                                     Ingrese un nombre
                                                 </div>
@@ -73,7 +73,7 @@
                                         <div class="form-group">
                                             <div class="col">
                                                 <label for="Descripcion">Descripción</label>
-                                                <input type="text" class="form-control" id="Descripcion" name="Descripcion" placeholder="Ingrese una descripción breve de su problema" onkeypress="return valideKey(event);" required>
+                                                <input type="text" class="form-control" id="Descripcion" name="Descripcion" placeholder="Ingrese una descripción breve de su problema" onkeypress="return valideKey(event);"  required>
                                                 <div class="invalid-tooltip">
                                                     Ingrese una descripción
                                                 </div>

@@ -70,6 +70,7 @@
                                         <th scope="col" class="text-light">Descripción</th>
                                         <th scope="col" class="text-light">Fecha Solicitado</th>
                                         <th scope="col" class="text-light">Estado</th>
+                                        <th scope="col" class="text-light">Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
