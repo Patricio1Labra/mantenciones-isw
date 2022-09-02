@@ -104,6 +104,7 @@
                                             </div>
                                         </div>
                                         <input type="submit" class="btn btn-primary" name="Enviar">
+                                        <a type="button" href='./index.php' class="btn btn-danger border-0">Cancelar</a>
                                         <?php include('./rellenar.php') ?>
                                     </form>
                                 </div>
