@@ -38,7 +38,13 @@
                 }
             }else{
                 #Insert en mantencion con error
-                echo "ha ocurrido un error";
+                echo "<script>";
+                echo "Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Error con la base de datos, intente nuevamente'
+                })";
+                echo "</script>";
             }
         }else{
             #campos vacios
