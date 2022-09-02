@@ -56,15 +56,15 @@
                 <div class="container">
                     <div class="my-3">
                         <div class="card rounded-0">
-                                <div class="card-header bg-light">
-                                    <h6 class="font-weight-bold mb-0">Solicitud</h6>
+                                <div class="card-header bg-primary">
+                                    <h6 class="font-weight-bold mb-0 text-light">Solicitud</h6>
                                 </div>
                                 <div class="card-body pt-2">
                                     <form method="post" action="" class="needs-validation" novalidate>
                                         <div class="form-group">
                                             <div class="col">
                                                 <label for="Titulo" id="Nombre">Nombre de Mantención</label>
-                                                <input type="text" class="form-control" id="Titulo" name="Titulo" placeholder="Ingrese aquí su mantención" onkeypress="return valideKey(event);"  required>
+                                                <input type="text" class="form-control" id="Titulo" name="Titulo" placeholder="Ingrese aquí su mantención" onkeypress="return valideKey(event);" maxlength=15 required>
                                                 <div class="invalid-tooltip">
                                                     Ingrese un nombre
                                                 </div>
@@ -73,7 +73,7 @@
                                         <div class="form-group">
                                             <div class="col">
                                                 <label for="Descripcion">Descripción</label>
-                                                <input type="text" class="form-control" id="Descripcion" name="Descripcion" placeholder="Ingrese una descripción breve de su problema" onkeypress="return valideKey(event);"  required>
+                                                <input type="text" class="form-control" id="Descripcion" name="Descripcion" placeholder="Ingrese una descripción breve de su problema" onkeypress="return valideKey(event);" maxlength=30 required>
                                                 <div class="invalid-tooltip">
                                                     Ingrese una descripción
                                                 </div>
