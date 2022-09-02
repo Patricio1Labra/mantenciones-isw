@@ -33,7 +33,7 @@
                     echo'
                             <td>
                                 <a type="button" href="#" class="btn btn-primary border-0">Editar</a>
-                                <a type="button" href="#" class="btn btn-danger border-0">Borrar</a>
+                                <a type="button" onclick="confirmar('.$fila["IDM"].')" class="btn btn-danger border-0">Borrar</a>
                             </td>
                         </tr>';
                 }else{
