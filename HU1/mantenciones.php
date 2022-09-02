@@ -20,6 +20,8 @@
                 if ($fila['ESTADO'] == "R") $fila['ESTADO']='Rechazado';
                 if ($fila['ESTADO'] == "F") $fila['ESTADO']='Fallido';
                 if ($fila['ESTADO'] == "T") $fila['ESTADO']='Terminado';
+                $fila['TITULO'][0]=strtoupper($fila['TITULO'][0]);
+                $fila['DESCRIPCION'][0]=strtoupper($fila['DESCRIPCION'][0]);
 
                 echo'
                         <tr>
