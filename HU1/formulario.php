@@ -63,8 +63,8 @@
                                     <form method="post" action="" class="needs-validation" novalidate>
                                         <div class="form-group">
                                             <div class="col">
-                                                <label for="Titulo" id="Nombre">Nombre de Mantención</label>
-                                                <input type="text" class="form-control" id="Titulo" name="Titulo" placeholder="Ingrese aquí su mantención" onkeypress="return valideKey(event);" maxlength=15 required>
+                                                <label for="Titulo" id="Nombre">Nombre de Mantención (15/15)</label>
+                                                <input type="text" class="form-control" id="Titulo" name="Titulo" placeholder="Ingrese aquí su mantención" onkeypress="return valideKey(event);" onkeyup="cont(this,'Nombre de Mantención',15,'Nombre');" onkeydown="cont(this,'Nombre de Mantención',15,'Nombre');" maxlength=15 required>
                                                 <div class="invalid-tooltip">
                                                     Ingrese un nombre
                                                 </div>
@@ -72,8 +72,8 @@
                                         </div>
                                         <div class="form-group">
                                             <div class="col">
-                                                <label for="Descripcion">Descripción</label>
-                                                <input type="text" class="form-control" id="Descripcion" name="Descripcion" placeholder="Ingrese una descripción breve de su problema" onkeypress="return valideKey(event);" maxlength=30 required>
+                                                <label for="Descripcion" id="Descripcio">Descripción (30/30)</label>
+                                                <input type="text" class="form-control" id="Descripcion" name="Descripcion" placeholder="Ingrese una descripción breve de su problema" onkeypress="return valideKey(event);" onkeyup="cont(this,'Descripción',30,'Descripcio');" onkeydown="cont(this,'Descripción',30,'Descripcio');" maxlength=30 required>
                                                 <div class="invalid-tooltip">
                                                     Ingrese una descripción
                                                 </div>
@@ -118,6 +118,20 @@
     <?php include('../partes/optionaljavascript.php') ?>
     <script src="../scripts/validaform.js"></script>
     <script src="../scripts/validanumeroyletra.js"></script>
+
+    <script>
+        function cont(obj,txt,lng,id){
+    var maxLength = lng;
+    var strLength = obj.value.length;
+    var charRemain = (maxLength - strLength);
+    
+    if(charRemain < 0){
+        document.getElementById(id).innerHTML = '<span style="color: red;">You have exceeded the limit of '+maxLength+' characters</span>';
+    }else{
+        document.getElementById(id).innerHTML = txt + ' (' + charRemain + '/' + maxLength + ')';
+    }
+}
+    </script>
 
 </body>
 
