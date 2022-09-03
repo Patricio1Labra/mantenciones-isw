@@ -60,7 +60,7 @@
                                     <h6 class="font-weight-bold mb-0 text-light">Solicitud</h6>
                                 </div>
                                 <div class="card-body pt-2">
-                                    <form method="post" action="" class="needs-validation" novalidate>
+                                    <form method="post" action="" class="needs-validation" id="formul" name="formul" novalidate>
                                         <div class="form-group">
                                             <div class="col">
                                                 <label for="Titulo" id="Nombre">Nombre de Mantención (15/15)</label>
@@ -103,7 +103,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <input type="submit" class="btn btn-primary" name="Enviar">
+                                        <input type="text" name="Enviar" id="Enviar" hidden>
+                                        <a type="button" onclick="enviar()" class="btn btn-primary border-0">Enviar</a>
                                         <a type="button" onclick="regresar()" class="btn btn-danger border-0">Cancelar</a>
                                         <?php include('./rellenar.php') ?>
                                     </form>
@@ -133,6 +134,26 @@
             }).then((result) => {
             if (result.isConfirmed) {
                 window.location = './index.php'
+            }
+            })
+        }
+    </script>
+
+    <script>
+        function enviar(){
+            Swal.fire({
+            title: 'Estas seguro',
+            text: "Revise sus datos antes de enviar",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, enviar',
+            cancelButtonText: 'Cancelar'
+            }).then((result) => {
+            if (result.isConfirmed) {
+                document.getElementById("Enviar").value="a";
+                document.getElementById("formul").submit();
             }
             })
         }
