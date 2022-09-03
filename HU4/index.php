@@ -86,9 +86,11 @@ include('../partes/head.php')
                 <dd class="col-sm-9" id="title"></dd>
                 <dt class="col-sm-3">Descripción</dt>
                 <dd class="col-sm-9" id="description"></dd>
+                <dt class="col-sm-3">Estado</dt>
+                <dd class="col-sm-9" id="estadoev"></dd>
                 <dt class="col-sm-3">Fecha</dt>
                 <dd class="col-sm-9" id="start"></dd>
-                <dt class="col-sm-3">Duracion(min)</dt>
+                <dt class="col-sm-3">Duración</dt>
                 <dd class="col-sm-9" id="duration"></dd>
             </dl>    
         </div>
