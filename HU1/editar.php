@@ -6,6 +6,7 @@
     <!-- head -->
         <?php 
         session_start();
+        $id=$_SESSION['ID'];
         if (!isset($_SESSION['rol'])) {
             header("Location: ../login/login.php");
         }else{
@@ -14,6 +15,16 @@
             }
         }
         include('../partes/head.php');
+        $IDM=$_GET["idm"];
+        $consulta="SELECT m.TITULO, m.DESCRIPCION, m.ESTADO, m.IDT FROM MANTENCION m, PIDE p WHERE IDV='$id' AND m.IDM='$IDM' AND m.IDM=p.IDM";
+        $resultado= mysqli_query($conex,$consulta);
+        if($resultado){
+            while($row = $resultado->fetch_array()){
+                $titulo = $row['TITULO'];
+                $descripcion = $row['DESCRIPCION'];
+                $tipo = $row['IDT'];
+            }
+        }
         ?>
         <title>Formulario Mantencion - Grupo 5</title>
     </head>
@@ -64,7 +75,7 @@
                                         <div class="form-group">
                                             <div class="col">
                                                 <label for="Titulo" id="Nombre">Nombre de Mantención (15/15)</label>
-                                                <input type="text" class="form-control" id="Titulo" name="Titulo" placeholder="Ingrese aquí su mantención" onkeypress="return valideKey(event);" onkeyup="cont(this,'Nombre de Mantención',15,'Nombre');" onkeydown="cont(this,'Nombre de Mantención',15,'Nombre');" maxlength=15 required>
+                                                <input type="text" class="form-control" id="Titulo" name="Titulo" placeholder="Ingrese aquí su mantención" onkeypress="return valideKey(event);" onkeyup="cont(this,'Nombre de Mantención',15,'Nombre');" onkeydown="cont(this,'Nombre de Mantención',15,'Nombre');" maxlength=15 value=<?php echo $titulo?> required>
                                                 <div class="invalid-tooltip">
                                                     Ingrese un nombre
                                                 </div>
@@ -73,7 +84,7 @@
                                         <div class="form-group">
                                             <div class="col">
                                                 <label for="Descripcion" id="Descripcio">Descripción (30/30)</label>
-                                                <input type="text" class="form-control" id="Descripcion" name="Descripcion" placeholder="Ingrese una descripción breve de su problema" onkeypress="return valideKey(event);" onkeyup="cont(this,'Descripción',30,'Descripcio');" onkeydown="cont(this,'Descripción',30,'Descripcio');" maxlength=30 required>
+                                                <input type="text" class="form-control" id="Descripcion" name="Descripcion" placeholder="Ingrese una descripción breve de su problema" onkeypress="return valideKey(event);" onkeyup="cont(this,'Descripción',30,'Descripcio');" onkeydown="cont(this,'Descripción',30,'Descripcio');" maxlength=30 value="<?php echo $descripcion?>" required>
                                                 <div class="invalid-tooltip">
                                                     Ingrese una descripción
                                                 </div>
@@ -89,11 +100,18 @@
                                                         $resultado= mysqli_query($conex,$consulta);
                                                         if($resultado){
                                                             while($row = $resultado->fetch_array()){
-                                                                $id = $row['IDT'];
+                                                                $idt = $row['IDT'];
                                                                 $titulo = $row['TIPOTITULO'];
-                                                            ?>
-                                                            <option value=<?php echo $id?>><?php echo $titulo?></option>
-                                                            <?php
+                                                                if($idt==$tipo){
+                                                                    ?>
+                                                                    <option value=<?php echo $idt?> selected><?php echo $titulo?></option>
+                                                                    <?php
+                                                                }else{
+                                                                    ?>
+                                                                    <option value=<?php echo $idt?>><?php echo $titulo?></option>
+                                                                    <?php
+                                                                }
+                                                            
                                                             }
                                                         }
                                                     ?>
@@ -103,10 +121,11 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <input type="text" id="IDM" name="IDM" hidden value=<?php echo $IDM?>>
                                         <input type="text" name="Enviar" id="Enviar" hidden>
                                         <a type="button" onclick="enviar()" class="btn btn-primary border-0">Enviar</a>
-                                        <a type="button" onclick="regresar()" class="btn btn-danger border-0">Cancelar</a>
-                                        <?php include('./rellenar.php') ?>
+                                        <a type="button" href='./index.php' class="btn btn-danger border-0">Cancelar</a>
+
                                     </form>
                                 </div>
                             </div>
@@ -118,6 +137,7 @@
 
     <?php include('../partes/optionaljavascript.php') ?>
     <script src="../scripts/validaform.js"></script>
+    <script src="../scripts/contador.js"></script>
     <script src="../scripts/validanumeroyletra.js"></script>
     <script src="../scripts/contador.js"></script>
     <script>
