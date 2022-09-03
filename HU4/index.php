@@ -38,7 +38,7 @@ include('../partes/head.php')
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb bg-transparent">
                                             <li class="breadcrumb-item"><a href="../index.php">Inicio</a></li>
-                                            <li class="breadcrumb-item">Mantencion de Instalaciones</li>
+                                            <li class="breadcrumb-item">Mantención de Instalaciones</li>
                                             <li class="breadcrumb-item active" aria-current="page">Calendario</li>
                                         </ol>
                                     </nav>
@@ -88,11 +88,13 @@ include('../partes/head.php')
                 <dd class="col-sm-9" id="description"></dd>
                 <dt class="col-sm-3">Fecha</dt>
                 <dd class="col-sm-9" id="start"></dd>
+                <dt class="col-sm-3">Duracion(min)</dt>
+                <dd class="col-sm-9" id="duration"></dd>
             </dl>    
         </div>
         <div class="modal-footer">
             
-            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
         </div>
         </div>
     </div>
