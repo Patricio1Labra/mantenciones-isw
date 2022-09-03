@@ -124,8 +124,8 @@
                                         <input type="text" id="IDM" name="IDM" hidden value=<?php echo $IDM?>>
                                         <input type="text" name="Enviar" id="Enviar" hidden>
                                         <a type="button" onclick="enviar()" class="btn btn-primary border-0">Enviar</a>
-                                        <a type="button" href='./index.php' class="btn btn-danger border-0">Cancelar</a>
-
+                                        <a type="button" onclick="regresar()" class="btn btn-danger border-0">Cancelar</a>
+                                        <?php include('./actualizar.php') ?>
                                     </form>
                                 </div>
                             </div>
