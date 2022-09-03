@@ -23,7 +23,13 @@
             }
 
         }else{
-            echo "rellene los campos porfavor";
+            echo "<script>";
+            echo "Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Los campos estan vacios'
+              })";
+            echo "</script>";
         }
     }
 ?>
