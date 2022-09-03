@@ -104,7 +104,7 @@
                                             </div>
                                         </div>
                                         <input type="submit" class="btn btn-primary" name="Enviar">
-                                        <a type="button" href='./index.php' class="btn btn-danger border-0">Cancelar</a>
+                                        <a type="button" onclick="regresar()" class="btn btn-danger border-0">Cancelar</a>
                                         <?php include('./rellenar.php') ?>
                                     </form>
                                 </div>
@@ -119,6 +119,24 @@
     <script src="../scripts/validaform.js"></script>
     <script src="../scripts/validanumeroyletra.js"></script>
     <script src="../scripts/contador.js"></script>
+    <script>
+        function regresar(){
+            Swal.fire({
+            title: 'Estas seguro',
+            text: "No se guardaran los cambios",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, salir',
+            cancelButtonText: 'Cancelar'
+            }).then((result) => {
+            if (result.isConfirmed) {
+                window.location = './index.php'
+            }
+            })
+        }
+    </script>
 
 </body>
 
