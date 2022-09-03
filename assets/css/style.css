@@ -64,7 +64,6 @@ a:hover {
     border-right: 1px solid var(--grey);
 }
 
-  
 @media (max-width: 768px) {
     #sidebar-container {
       display: none;
@@ -73,3 +72,16 @@ a:hover {
         border: 0;
     }
   }
+
+#fc-dom-1.fc-toolbar-title::first-letter  { 
+    display: inline-block;
+    text-transform: capitalize;
+ }
+a.fc-col-header-cell-cushion::first-letter{
+    display: inline-block;
+    text-transform: capitalize;
+}
+div.fc-event-title.fc-sticky::first-letter{
+    display: inline-block;
+    text-transform: capitalize;
+}

@@ -21,8 +21,16 @@ document.addEventListener('DOMContentLoaded', function() {
         eventClick:function(info) {
             info.jsEvent.preventDefault();
 
-            $('#exampleModal #title').text(info.event.title);  
-            $('#exampleModal #description').text(info.event.extendedProps.description);  
+            function capitalizeFirstLetter(string){
+                return string.charAt(0).toUpperCase() + string.slice(1);
+            }
+
+            var titulo = capitalizeFirstLetter(info.event.title);
+            var descripcion = capitalizeFirstLetter(info.event.extendedProps.description);
+
+
+            $('#exampleModal #title').text(titulo);  
+            $('#exampleModal #description').text(descripcion);  
             $('#exampleModal #start').text(info.event.start.toLocaleDateString());
             $('#exampleModal #duration').text(info.event.extendedProps.duration);    
             $('#exampleModal').modal('show');
