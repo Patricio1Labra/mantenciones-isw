@@ -74,7 +74,7 @@
                                     <form method="post" action="" class="needs-validation" id="formul" novalidate>
                                         <div class="form-group">
                                             <div class="col">
-                                                <label for="Titulo" id="Nombre">Nombre de Mantención (15/15)</label>
+                                                <label for="Titulo" id="Nombre">Nombre de Mantención (<?php echo 15-strlen($titulo)?>/15)</label>
                                                 <input type="text" class="form-control" id="Titulo" name="Titulo" placeholder="Ingrese aquí su mantención" onkeypress="return valideKey(event);" onkeyup="cont(this,'Nombre de Mantención',15,'Nombre');" onkeydown="cont(this,'Nombre de Mantención',15,'Nombre');" maxlength=15 value=<?php echo $titulo?> required>
                                                 <div class="invalid-tooltip">
                                                     Ingrese un nombre
@@ -83,7 +83,7 @@
                                         </div>
                                         <div class="form-group">
                                             <div class="col">
-                                                <label for="Descripcion" id="Descripcio">Descripción (30/30)</label>
+                                                <label for="Descripcion" id="Descripcio">Descripción (<?php echo 30-strlen($descripcion)?>/30)</label>
                                                 <input type="text" class="form-control" id="Descripcion" name="Descripcion" placeholder="Ingrese una descripción breve de su problema" onkeypress="return valideKey(event);" onkeyup="cont(this,'Descripción',30,'Descripcio');" onkeydown="cont(this,'Descripción',30,'Descripcio');" maxlength=30 value="<?php echo $descripcion?>" required>
                                                 <div class="invalid-tooltip">
                                                     Ingrese una descripción
