@@ -118,20 +118,7 @@
     <?php include('../partes/optionaljavascript.php') ?>
     <script src="../scripts/validaform.js"></script>
     <script src="../scripts/validanumeroyletra.js"></script>
-
-    <script>
-        function cont(obj,txt,lng,id){
-    var maxLength = lng;
-    var strLength = obj.value.length;
-    var charRemain = (maxLength - strLength);
-    
-    if(charRemain < 0){
-        document.getElementById(id).innerHTML = '<span style="color: red;">You have exceeded the limit of '+maxLength+' characters</span>';
-    }else{
-        document.getElementById(id).innerHTML = txt + ' (' + charRemain + '/' + maxLength + ')';
-    }
-}
-    </script>
+    <script src="../scripts/contador.js"></script>
 
 </body>
 
