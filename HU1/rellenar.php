@@ -30,8 +30,14 @@
                         print "<script>window.setTimeout(function() { window.location = './index.php' }, 0);</script>";
                     }else{
                         #Insert en pide con error
-                        echo "ha ocurrido un error";
-                    }
+                        echo "<script>";
+                        echo "Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Error con la base de datos, intente nuevamente'
+                        })";
+                        echo "</script>";
+                        }
                 }else{
                     #IDM no encontrado
                     echo "<script>";
