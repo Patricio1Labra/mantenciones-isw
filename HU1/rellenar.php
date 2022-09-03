@@ -34,7 +34,13 @@
                     }
                 }else{
                     #IDM no encontrado
-                    "ha ocurrido un error";
+                    echo "<script>";
+                    echo "Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Error al encontrar id, intente nuevamente'
+                    })";
+                    echo "</script>";
                 }
             }else{
                 #Insert en mantencion con error
