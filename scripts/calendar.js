@@ -12,14 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
         },        
         eventSources:[
             {
-                url: './verMantencion.php',
-                color:function(info){
-                    if(info.event.extendedProps.estado.indexOf('P') > -1 ){
-                        return '#gray';
-                    }else{
-                        return '#111B54';
-                    }
-                }
+                url: './verMantencion.php'
+                
             }
         ] ,        
         themeSystem: 'bootstrap',
@@ -52,12 +46,21 @@ document.addEventListener('DOMContentLoaded', function() {
             $('#exampleModal #title').text(titulo);  
             $('#exampleModal #description').text(descripcion);  
             $('#exampleModal #estadoev').text(estadonuevo);
-            $('#exampleModal #start').text(info.event.start.toLocaleDateString());
+            $('#exampleModal #start').text(info.event.start.toLocaleString());
             $('#exampleModal #duration').text(duracionfecha);    
             $('#exampleModal').modal('show');
             
         
             
+        },
+        eventDidMount:function(info){
+            if(info.event.extendedProps.estado.indexOf('P') > -1){
+                info.el.style.backgroundColor = "#C4AB55"
+                info.el.style.borderColor = "#C4AB55"
+            }else{
+                info.el.style.backgroundColor = "#FFE480"
+                info.el.style.borderColor = "#FFE480"
+            }
         }
         
 

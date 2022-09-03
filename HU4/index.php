@@ -33,8 +33,6 @@ include('../partes/head.php')
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-9 col-md-8">
-                                    <h1 class="font-weight-bold mb-0">Calendario de Mantenciones </h1>
-                                    <p class="lead text-muted">Programa de Mantención y Agenda</p>
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb bg-transparent">
                                             <li class="breadcrumb-item"><a href="../index.php">Inicio</a></li>
@@ -42,6 +40,9 @@ include('../partes/head.php')
                                             <li class="breadcrumb-item active" aria-current="page">Calendario</li>
                                         </ol>
                                     </nav>
+                                    <h1 class="font-weight-bold mb-0">Calendario de Mantenciones </h1>
+                                    <p class="lead text-muted">Programa de Mantención y Agenda</p>
+                                    
                                 </div>
                                 
                             </div>
@@ -52,12 +53,20 @@ include('../partes/head.php')
                         <div class="container col-10">
                                 <div class="col-10 ">
                                     <div id='CalendarioWeb'></div>
+                                    <div class="row mt-2">
+                                        <div class="ml-3">
+                                            <i class="fas fa-circle fa-xl " style="color: #111B54"></i>
+                                            <label>
+                                                <b>Mantenciones pendientes</b>
+                                            </label>
+                                        </div>
+                        </div>
+                    
                                     
                             </div>
                         </div>
                         
                         
-                    
                     </section>
 
             </div>
