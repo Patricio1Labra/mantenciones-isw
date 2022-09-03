@@ -50,7 +50,7 @@ if(isset($_POST['Siguiente'])){
                         $IDM= $valoresm['id'];
                     }
                 }
-                $consulta = "INSERT INTO ENCARGA VALUES ('$ID','$IDM','$fe','','$duracion')";
+                $consulta = "INSERT INTO ENCARGA VALUES ('$ID','$IDM','$fe','$fec','$duracion')";
                 $resultado = mysqli_query($conex,$consulta);
                 if($resultado) {
                     echo "<script>";
