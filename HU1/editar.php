@@ -140,24 +140,8 @@
     <script src="../scripts/contador.js"></script>
     <script src="../scripts/validanumeroyletra.js"></script>
     <script src="../scripts/contador.js"></script>
-    <script>
-        function regresar(){
-            Swal.fire({
-            title: 'Estas seguro',
-            text: "No se guardaran los cambios",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Si, salir',
-            cancelButtonText: 'Cancelar'
-            }).then((result) => {
-            if (result.isConfirmed) {
-                window.location = './index.php'
-            }
-            })
-        }
-    </script>
+    <script src="../scripts/regresar.js"></script>
+    
 
     <script>
         function enviar(){
