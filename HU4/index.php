@@ -55,9 +55,15 @@ include('../partes/head.php')
                                     <div id='CalendarioWeb'></div>
                                     <div class="row mt-2">
                                         <div class="ml-3">
-                                            <i class="fas fa-circle fa-xl " style="color: #111B54"></i>
+                                            <i class="fas fa-circle fa-xl " style="color: #C4AB55"></i>
                                             <label>
                                                 <b>Mantenciones pendientes</b>
+                                            </label>
+                                        </div>
+                                        <div class="ml-3">
+                                            <i class="fas fa-circle fa-xl " style="color: #107135"></i>
+                                            <label>
+                                                <b>Mantenciones terminadas</b>
                                             </label>
                                         </div>
                         </div>
@@ -97,10 +103,13 @@ include('../partes/head.php')
                 <dd class="col-sm-9" id="description"></dd>
                 <dt class="col-sm-3">Estado</dt>
                 <dd class="col-sm-9" id="estadoev"></dd>
-                <dt class="col-sm-3">Fecha</dt>
+                <dt class="col-sm-3">Fecha Inicio</dt>
                 <dd class="col-sm-9" id="start"></dd>
+                <dt class="col-sm-3">Fecha Término</dt>
+                <dd class="col-sm-9" id="end"></dd>
                 <dt class="col-sm-3">Duración</dt>
                 <dd class="col-sm-9" id="duration"></dd>
+                
             </dl>    
         </div>
         <div class="modal-footer">

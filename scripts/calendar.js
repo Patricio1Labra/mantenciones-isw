@@ -3,12 +3,14 @@ document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('CalendarioWeb');
 
     var calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'dayGridMonth',
+        initialView: 'timeGridWeek',
         locale: 'es',
+        dayMaxEventRows: true,
         headerToolbar: {
         left: 'prev,next today',
         center: 'title',
-        right: 'dayGridMonth,timeGridWeek,timeGridDay'
+        right: 'dayGridMonth,timeGridWeek,timeGridDay',
+        
         },        
         eventSources:[
             {
@@ -47,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
             $('#exampleModal #description').text(descripcion);  
             $('#exampleModal #estadoev').text(estadonuevo);
             $('#exampleModal #start').text(info.event.start.toLocaleString());
+            $('#exampleModal #end').text(info.event.end.toLocaleString());
             $('#exampleModal #duration').text(duracionfecha);    
             $('#exampleModal').modal('show');
             
@@ -57,9 +60,12 @@ document.addEventListener('DOMContentLoaded', function() {
             if(info.event.extendedProps.estado.indexOf('P') > -1){
                 info.el.style.backgroundColor = "#C4AB55"
                 info.el.style.borderColor = "#C4AB55"
-            }else{
-                info.el.style.backgroundColor = "#FFE480"
-                info.el.style.borderColor = "#FFE480"
+                info.el.style.textColor = "#fff"
+            }
+            if(info.event.extendedProps.estado.indexOf('T') > -1){
+                info.el.style.backgroundColor = "#107135"
+                info.el.style.borderColor = "#107135"
+                info.el.style.textColor = "#ffffff"
             }
         }
         
