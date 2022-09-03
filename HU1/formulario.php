@@ -84,19 +84,7 @@
                                                 <label for="Tipo">Tipo</label>
                                                 <select class="form-control" id="Tipo" name="Tipo" required>
                                                     <option value="" hidden>Seleccionar Tipo</option>
-                                                    <?php
-                                                        $consulta="SELECT IDT, TIPOTITULO FROM TIPO";
-                                                        $resultado= mysqli_query($conex,$consulta);
-                                                        if($resultado){
-                                                            while($row = $resultado->fetch_array()){
-                                                                $id = $row['IDT'];
-                                                                $titulo = $row['TIPOTITULO'];
-                                                            ?>
-                                                            <option value=<?php echo $id?>><?php echo $titulo?></option>
-                                                            <?php
-                                                            }
-                                                        }
-                                                    ?>
+                                                    <?php include('./tipo.php') ?>
                                                 </select>
                                                 <div class="invalid-tooltip">
                                                     Ingrese un tipo
@@ -117,11 +105,12 @@
         </div>
 
     <?php include('../partes/optionaljavascript.php') ?>
-    <script src="../scripts/validaform.js"></script>
     <script src="../scripts/validanumeroyletra.js"></script>
     <script src="../scripts/contador.js"></script>
     <script src="../scripts/regresar.js"></script>
     <script src="../scripts/enviar.js"></script>
+    <script src="../scripts/validaform.js"></script>
+
 
 </body>
 
