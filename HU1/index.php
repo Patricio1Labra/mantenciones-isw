@@ -87,7 +87,7 @@
         </div>
 
         <?php include('../partes/optionaljavascript.php') ?>
-        <script src="../scripts/datatable.js"></script>
+        <script src="../scripts/datatablesolicitud.js"></script>
         <style>
             .dataTable-sorter::after{
                 border-bottom: 4px solid white;
