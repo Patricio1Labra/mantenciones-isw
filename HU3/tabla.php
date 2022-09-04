@@ -1,7 +1,7 @@
 <?php
 include("../con_db.php");
 $ID = $_SESSION['ID'];
-$consulta = "SELECT M.IDM, M.TITULO, M.DESCRIPCION, M.ESTADO,DATE_FORMAT(EN.FECHA, '%d/%m/%Y %H:%i:%S') AS FECHA, EN.DURACION FROM MANTENCION M, ENCARGA EN WHERE M.IDM=EN.IDM AND EN.IDE='$ID' ORDER BY M.ESTADO,FECHA";
+$consulta = "SELECT M.IDM,M.IDT, M.TITULO, M.DESCRIPCION, M.ESTADO,DATE_FORMAT(EN.FECHA, '%d/%m/%Y %H:%i:%S') AS FECHA,DATE_FORMAT(EN.FECHA, '%Y-%m-%d') AS FECHASINHORA,DATE_FORMAT(EN.FECHA, '%H:%i') AS HORA, EN.DURACION FROM MANTENCION M, ENCARGA EN WHERE M.IDM=EN.IDM AND EN.IDE='$ID' ORDER BY M.ESTADO,FECHA";
 $resultado = mysqli_query($conex,$consulta);
 $verFilas = mysqli_num_rows($resultado);
 if(!$resultado){
@@ -31,16 +31,16 @@ if(!$resultado){
                         <td>'.$fila['ESTADO'].'</td>
                         <td>'.$fila['FECHA'].'</td>
                         <td>'.$fila['DURACION'].'</td>
-                        <td class="text-center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"  >Editar</button>
+                        <td class="text-center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal'.$fila['IDM'].'"  >Editar</button>
                         <a href=".php?idm='.$fila["IDM"].'"type="button" class="btn btn-danger">Borrar</a>
                         </td>
 
                     </tr>
                     
                 ';
-            
+                include("modal.php"); 
+                
         }
     }
 }
-include("modal.php");
 ?>

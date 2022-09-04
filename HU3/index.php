@@ -62,13 +62,13 @@
                         ?>
                         </select>
                         <br>
-                        <label class="form-label" for="Tipo">Ingresar Descripción</label>
+                        <label class="form-label" for="Descripcion">Ingresar Descripción</label>
                         <input class="form-control" required type="text" name="Descripcion" placeholder="Descripción" onkeypress="return valideKey(event);">
                         <br>
                         <label class="form-label" for="Fecha">Ingresar Fecha</label>
                         <input class="form-control" required type="date" min="<?php echo date('Y-m-d'); ?>" name="Fecha" placeholder="Fecha">
                         <br>
-                        <label class="form-label" for="Duracion">Ingresar Hora de inicio</label>
+                        <label class="form-label" for="Hora">Ingresar Hora de inicio</label>
                         <input class="form-control" required type="time" name="Hora">
                         <br>
                         <label class="form-label" for="Duracion">Ingresar Duración</label>
