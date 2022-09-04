@@ -60,6 +60,7 @@
                                         <th scope="col">Estado</th>
                                         <th scope="col">Fecha</th>
                                         <th scope="col">Duración (minutos)</th>
+                                        <th scope="col">Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
