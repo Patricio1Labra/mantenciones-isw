@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
         initialView: 'timeGridWeek',
         locale: 'es',
         dayMaxEventRows: true,
+        allDaySlot: false,
         headerToolbar: {
         left: 'prev,next today',
         center: 'title',
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
         eventSources:[
             {
                 url: './verMantencion.php'
+                
                 
             }
         ] ,        
@@ -48,9 +50,10 @@ document.addEventListener('DOMContentLoaded', function() {
             $('#exampleModal #title').text(titulo);  
             $('#exampleModal #description').text(descripcion);  
             $('#exampleModal #estadoev').text(estadonuevo);
-            $('#exampleModal #start').text(info.event.start.toLocaleString());
-            $('#exampleModal #end').text(info.event.end.toLocaleString());
-            $('#exampleModal #duration').text(duracionfecha);    
+            $('#exampleModal #start').text(info.event.start.toLocaleDateString());
+            $('#exampleModal #starttime').text(info.event.start.toLocaleTimeString());
+            $('#exampleModal #endtime').text(info.event.end.toLocaleTimeString());
+            $('#exampleModal #duration').text(duracionfecha+" (min)");    
             $('#exampleModal').modal('show');
             
         
@@ -60,13 +63,16 @@ document.addEventListener('DOMContentLoaded', function() {
             if(info.event.extendedProps.estado.indexOf('P') > -1){
                 info.el.style.backgroundColor = "#C4AB55"
                 info.el.style.borderColor = "#C4AB55"
-                info.el.style.textColor = "#fff"
+                info.event.extendedProps.estado.textColor = 'white'
+                
             }
             if(info.event.extendedProps.estado.indexOf('T') > -1){
                 info.el.style.backgroundColor = "#107135"
                 info.el.style.borderColor = "#107135"
-                info.el.style.textColor = "#ffffff"
+                info.event.extendedProps.estado.textColor = 'white'
+                
             }
+            
         }
         
 

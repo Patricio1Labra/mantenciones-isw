@@ -85,3 +85,6 @@ div.fc-event-title.fc-sticky::first-letter{
     display: inline-block;
     text-transform: capitalize;
 }
+.fc-day-grid < div.fc-row:nth-of-type(even) {
+    background: #ffffff;
+}

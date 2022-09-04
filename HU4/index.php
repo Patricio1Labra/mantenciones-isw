@@ -87,28 +87,30 @@ include('../partes/head.php')
     
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog " role="document">
+    <div class="modal-dialog modal-dialog-centered " role="document">
         <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="tituloEvento">Detalles de la Mantención</h5>
+            <h5 class="modal-title" style="font-weight: bold;" id="tituloEvento">Detalles de la Mantención</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
             </button>
         </div>
         <div class="modal-body">
             <dl class="row">
-                <dt class="col-sm-3">Título</dt>
-                <dd class="col-sm-9" id="title"></dd>
-                <dt class="col-sm-3">Descripción</dt>
-                <dd class="col-sm-9" id="description"></dd>
-                <dt class="col-sm-3">Estado</dt>
-                <dd class="col-sm-9" id="estadoev"></dd>
-                <dt class="col-sm-3">Fecha Inicio</dt>
-                <dd class="col-sm-9" id="start"></dd>
-                <dt class="col-sm-3">Fecha Término</dt>
-                <dd class="col-sm-9" id="end"></dd>
-                <dt class="col-sm-3">Duración</dt>
-                <dd class="col-sm-9" id="duration"></dd>
+                <dt class="col-sm-4">Título</dt>
+                <dd class="col-sm-8" id="title"></dd>
+                <dt class="col-sm-4">Descripción</dt>
+                <dd class="col-sm-8" id="description"></dd>
+                <dt class="col-sm-4">Estado</dt>
+                <dd class="col-sm-8" id="estadoev"></dd>
+                <dt class="col-sm-4">Fecha </dt>
+                <dd class="col-sm-8" id="start"></dd>
+                <dt class="col-sm-4">Hora Inicio</dt>
+                <dd class="col-sm-8" id="starttime"></dd>
+                <dt class="col-sm-4">Hora Término</dt>
+                <dd class="col-sm-8" id="endtime"></dd>
+                <dt class="col-sm-4">Duración</dt>
+                <dd class="col-sm-8" id="duration"></dd>
                 
             </dl>    
         </div>
