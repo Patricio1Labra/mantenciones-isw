@@ -56,8 +56,8 @@ if(isset($_POST['Siguiente'])){
                     echo "<script>";
             echo "Swal.fire({
                 icon: 'success',
-                title: 'Mantencion registrada con exito',
-                text: '".$fec."'
+                title: 'Mantencion registrada con exito'
+                
               })";
             echo "</script>";
                     

@@ -42,11 +42,12 @@
             <label class="form-label" for="Duracion">Ingresar Duración</label>
             <input class="form-control" required type="number" value="'.$fila['DURACION'].'" name="Duracion" placeholder="Duración(en minutos)" onkeypress="return valideKey(event);">
             <br>
-            
+            <input value="'.$fila['IDM'].'" type="hidden" name="id">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger border-0" data-dismiss="modal">Cerrar</button>
           <button type="submit" class="btn btn-primary" name="editar">Guardar</button>
+          ';include("editar.php"); echo '
           </form>
         </div>
       </div>
@@ -54,6 +55,7 @@
   </div>';
     
 ?>
+
 <?php include('../partes/optionaljavascript.php') ?>
         <script src="../scripts/validaform.js"></script>
         <script src="../scripts/validanumeroyletra.js"></script>
