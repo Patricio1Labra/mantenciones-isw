@@ -31,7 +31,7 @@ if(!$resultado){
                         <td>'.$fila['ESTADO'].'</td>
                         <td>'.$fila['FECHA'].'</td>
                         <td>'.$fila['DURACION'].'</td>
-                        <td class="text-center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" >Editar</button>
+                        <td class="text-center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"  >Editar</button>
                         <a href=".php?idm='.$fila["IDM"].'"type="button" class="btn btn-danger">Borrar</a>
                         </td>
 
@@ -42,4 +42,5 @@ if(!$resultado){
         }
     }
 }
+include("modal.php");
 ?>
