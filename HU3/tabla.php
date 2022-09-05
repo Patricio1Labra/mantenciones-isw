@@ -32,7 +32,7 @@ if(!$resultado){
                         <td>'.$fila['FECHA'].'</td>
                         <td>'.$fila['DURACION'].'</td>
                         <td class="text-center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal'.$fila['IDM'].'"  >Editar</button>
-                        <a href=".php?idm='.$fila["IDM"].'"type="button" class="btn btn-danger border-0">Borrar</a>
+                        <a href="borrar.php?idm='.$fila["IDM"].'"type="button" class="btn btn-danger border-0">Borrar</a>
                         </td>
 
                     </tr>
