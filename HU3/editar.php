@@ -14,16 +14,22 @@ if(isset($_POST['editar'])){
     $consulta = "UPDATE MANTENCION SET IDT='$tipo',TITULO='$titulo',DESCRIPCION='$descripcion' WHERE IDM='$idm'";
     $res = mysqli_query($conex,$consulta);
                 if($res) {
-                    echo "<script>";
-            echo "Swal.fire({
-                icon: 'success',
-                title: 'Se edito correctamente',
-                showConfirmButton: false,
-                timer: 1500
-              })";
-            echo "</script>";
-                    print "<script>window.setTimeout(function() { window.location = './vermantenciones.php' }, 1500);</script>";
-                    
+                    $consulta2 = "UPDATE ENCARGA SET FECHA='$fe',FECHAFIN='$fec',DURACION='$duracion' WHERE IDM='$idm'";
+                    $res2 = mysqli_query($conex,$consulta2);
+                    if($res2) {                      
+                        echo "<script>";
+                        echo "Swal.fire({
+                            icon: 'success',
+                            title: 'Se edito correctamente',
+                            showConfirmButton: false,
+                            timer: 1500
+                          })";
+                        echo "</script>";
+                        print "<script>window.setTimeout(function() { window.location = './vermantenciones.php' }, 1500);</script>";
+
+                    }else{
+                        echo 'Error';
+                    }
                 }else{
                     echo "Error";
                 }
