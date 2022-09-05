@@ -1,6 +1,6 @@
 <?php
                                 include('../con_db.php');
-                                $consulta = "SELECT t.TIPOTITULO,m.TITULO,m.DESCRIPCION,p.FECHA,m.ESTADO,v.RUT,v.NOMBRE,m.IDM FROM MANTENCION m, TIPO t, PIDE p, VECINO v  WHERE p.IDM = m.IDM and v.IDV=p.IDV and m.IDT=t.IDT";
+                                $consulta = "SELECT t.TIPOTITULO,m.TITULO,m.DESCRIPCION,DATE_FORMAT(p.FECHA, '%d/%m/%Y') AS FECHA,m.ESTADO,v.RUT,v.NOMBRE,m.IDM FROM MANTENCION m, TIPO t, PIDE p, VECINO v  WHERE p.IDM = m.IDM and v.IDV=p.IDV and m.IDT=t.IDT";
                                 $resultado = mysqli_query($conex,$consulta);
                                 if($resultado){
                                     while($row = $resultado->fetch_array()){
