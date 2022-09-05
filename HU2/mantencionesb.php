@@ -22,7 +22,7 @@
                                     <td class="text-center">'.$row["NOMBRE"].' '.$row["RUT"].'</td>
                                     <td class="text-center">'.$row["ESTADO"].'</td>';
                                     if($row["ESTADO"] == "Pendiente"){
-                                        echo '<td class="text-center"><a href="aceptar.php?idm='.$row["IDM"].'"type="button" class="btn btn-success">
+                                        echo '<td class="text-center"><a href="aceptar.php?idm='.$row["IDM"].'"type="button" class="btn btn-success" onclick="return ConfirmarEstado()">
                                         Aprobar
                                       </a><button href="eliminar.php?idm= "type="button" class="btn btn-danger">
                                       Eliminar
@@ -33,7 +33,7 @@
                                     ';
                                     }else{
                                         if($row["ESTADO"] =="Aprobado"){
-                                            echo '<td class="text-center"><a href="finalizar.php?idm='.$row["IDM"].'"type="button" class="btn btn-danger">
+                                            echo '<td class="text-center"><a href="finalizar.php?idm='.$row["IDM"].'"type="button" class="btn btn-danger" onclick="return ConfirmarEstado()">
                                         Finalizar
                                       </a><button href="eliminar.php?idm= "type="button" class="btn btn-danger">
                                       Eliminar

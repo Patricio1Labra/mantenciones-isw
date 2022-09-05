@@ -15,7 +15,18 @@
     <script src="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.js" type="text/javascript"></script>
     <title>Gestión de solicitudes</title>
 </head>
-
+<script type="text/javascript">
+    function ConfirmarEstado()
+    {
+        var respuesta = confirm("Estas seguro que quieres cambiar el estado?");
+        if (respuesta == true)
+        {
+            return true;
+        }else{
+            return false;
+        }
+    }
+</script>    
 <body>
     <div class="d-flex" id="content-wrapper">
     <!-- sideBar -->
