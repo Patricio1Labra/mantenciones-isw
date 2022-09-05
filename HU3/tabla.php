@@ -96,6 +96,6 @@ if(!$resultado){
     }
 }
 ?>
-<?php include('../partes/optionaljavascript.php') ?>
+
         <script src="../scripts/validaform.js"></script>
         <script src="../scripts/validanumeroyletra.js"></script>
