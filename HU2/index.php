@@ -63,7 +63,6 @@
                                     <th scope="col">Vecino</th>
                                     <th scope="col">Estado</th>
                                     <th scope="col">Acciones</th>
-                                    <th scope="col">Eliminar</th>
                                 </tr>
                             </thead>
                                 <tbody>

@@ -24,25 +24,39 @@
                                     if($row["ESTADO"] == "Pendiente"){
                                         echo '<td class="text-center"><a href="aceptar.php?idm='.$row["IDM"].'"type="button" class="btn btn-success">
                                         Aprobar
-                                      </a></td>
+                                      </a><button href="eliminar.php?idm= "type="button" class="btn btn-danger">
+                                      Eliminar
+                                    </button><button href="editar.php?idm= "type="button" class="btn btn-primary">
+                                    Editar
+                                  </button></td>
                                     </tr>
                                     ';
                                     }else{
                                         if($row["ESTADO"] =="Aprobado"){
                                             echo '<td class="text-center"><a href="finalizar.php?idm='.$row["IDM"].'"type="button" class="btn btn-danger">
                                         Finalizar
-                                      </a></td>
+                                      </a><button href="eliminar.php?idm= "type="button" class="btn btn-danger">
+                                      Eliminar
+                                    </button><button href="editar.php?idm= "type="button" class="btn btn-primary">
+                                    Editar
+                                  </button></td>
                                     </tr>
                                     ';
                                         }else{
                                             echo '<td class="text-center"><button href="editar.php?idm= "type="button" class="btn btn-secondary" disabled="disabled">
                                             Finalizada
-                                          </button></td>
+                                          </button><button href="eliminar.php?idm= "type="button" class="btn btn-danger">
+                                          Eliminar
+                                        </button><button href="editar.php?idm= "type="button" class="btn btn-primary">
+                                        Editar
+                                      </button></td>
                                         </tr>
                                         ';
                                         }
                                         
                                     }
+                                    
+                                
                                     }
                                 }
                                 ?>
