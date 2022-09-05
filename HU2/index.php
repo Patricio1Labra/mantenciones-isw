@@ -72,6 +72,7 @@
                                     <th scope="col">Descripcion</th>
                                     <th scope="col">Fecha solicitud</th>
                                     <th scope="col">Vecino</th>
+                                    <th scope="col">RUT</th>
                                     <th scope="col">Estado</th>
                                     <th scope="col">Acciones</th>
                                 </tr>

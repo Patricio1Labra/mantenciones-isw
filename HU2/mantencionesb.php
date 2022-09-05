@@ -19,7 +19,8 @@
                                     <td class="text-center">'.$row["TITULO"].'</td>
                                     <td class="text-center">'.$row["DESCRIPCION"].'</td>
                                     <td class="text-center">'.$row["FECHA"].'</td>
-                                    <td class="text-center">'.$row["NOMBRE"].' '.$row["RUT"].'</td>
+                                    <td class="text-center">'.$row["NOMBRE"].'</td>
+                                    <td class="text-center">'.$row["RUT"].'</td>
                                     <td class="text-center">'.$row["ESTADO"].'</td>';
                                     if($row["ESTADO"] == "Pendiente"){
                                         echo '<td class="text-center"><a href="aceptar.php?idm='.$row["IDM"].'"type="button" class="btn btn-success" onclick="return ConfirmarEstado()">
