@@ -76,10 +76,12 @@
                         <br>
                         <input class="btn btn-primary btn-sm" type="submit" name="Siguiente">
                         <a class="btn btn-success border-0 btn-sm" href="./verMantenciones.php">Ver mantenciones</a>
+                        <a class="btn btn-secondary border-0 btn-sm float-right" href="./agregartipo.php">Añadir tipo de mantencion</a>
                         <?php
                             include("./registro.php");
                         ?>
                         </form>
+                        
                     </div>
                 </div>    
             </div>
