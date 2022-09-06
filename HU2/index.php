@@ -26,6 +26,16 @@
             return false;
         }
     }
+    function ConfirmarEliminar()
+    {
+        var respuesta = confirm("Estas seguro que quieres eliminar esta mantencion?");
+        if (respuesta == true)
+        {
+            return true;
+        }else{
+            return false;
+        }
+    }
 </script>    
 <body>
     <div class="d-flex" id="content-wrapper">

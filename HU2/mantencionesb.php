@@ -25,7 +25,7 @@
                                     if($row["ESTADO"] == "Pendiente"){
                                         echo '<td class="text-center"><a href="aceptar.php?idm='.$row["IDM"].'"type="button" class="btn btn-success" onclick="return ConfirmarEstado()">
                                         Aprobar
-                                      </a><button href="eliminar.php?idm= "type="button" class="btn btn-danger">
+                                      </a><button href="eliminar.php?idm= "type="button" class="btn btn-danger" onclick="return ConfirmarEliminar()">
                                       Eliminar
                                     </button><button href="editar.php?idm= "type="button" class="btn btn-primary">
                                     Editar
@@ -36,7 +36,7 @@
                                         if($row["ESTADO"] =="Aprobado"){
                                             echo '<td class="text-center"><a href="finalizar.php?idm='.$row["IDM"].'"type="button" class="btn btn-danger" onclick="return ConfirmarEstado()">
                                         Finalizar
-                                      </a><button href="eliminar.php?idm= "type="button" class="btn btn-danger">
+                                      </a><button href="eliminar.php?idm= "type="button" class="btn btn-danger" onclick="return ConfirmarEliminar()">
                                       Eliminar
                                     </button><button href="editar.php?idm= "type="button" class="btn btn-primary">
                                     Editar
@@ -46,7 +46,7 @@
                                         }else{
                                             echo '<td class="text-center"><button href="editar.php?idm= "type="button" class="btn btn-secondary" disabled="disabled">
                                             Finalizada
-                                          </button><button href="eliminar.php?idm= "type="button" class="btn btn-danger">
+                                          </button><button href="eliminar.php?idm= "type="button" class="btn btn-danger" onclick="return ConfirmarEliminar()">
                                           Eliminar
                                         </button><button href="editar.php?idm= "type="button" class="btn btn-primary">
                                         Editar
