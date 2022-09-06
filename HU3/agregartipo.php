@@ -54,7 +54,7 @@
                         <label class="form-label" for="Descripcion">Ingresar Descripción</label>
                         <input class="form-control" required type="text" name="Descripcion" placeholder="Descripción" onkeypress="return valideKey(event);">
                         <br>
-                        <input class="btn btn-primary btn-sm" type="submit" name="Siguiente3">
+                        <input class="btn btn-primary btn-sm" type="submit" name="Siguiente2">
                         <a class="btn btn-danger border-0 btn-sm" href="./index.php">Volver</a>
                         <?php
                             include("./registro.php");

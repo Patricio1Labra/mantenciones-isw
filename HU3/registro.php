@@ -82,4 +82,20 @@ if(isset($_POST['Siguiente'])){
     }
     
        
-}?>
+}
+if(isset($_POST['Siguiente2'])){
+    $nombre = $_POST['Nombre'];
+    $descripcion = $_POST['Descripcion'];
+    $consulta ="INSERT INTO TIPO VALUES (default,'$nombre','$descripcion')";
+    $res = mysqli_query($conex,$consulta);
+    if($res) {
+        
+    }else{
+        echo "error";
+    }   
+}
+
+
+
+
+?>
