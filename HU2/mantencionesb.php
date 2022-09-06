@@ -25,32 +25,32 @@
                                     if($row["ESTADO"] == "Pendiente"){
                                         echo '<td class="text-center"><a href="aceptar.php?idm='.$row["IDM"].'"type="button" class="btn btn-success" onclick="return ConfirmarEstado()">
                                         Aprobar
-                                      </a><button href="eliminar.php?idm= "type="button" class="btn btn-danger" onclick="return ConfirmarEliminar()">
-                                      Eliminar
-                                    </button><button href="editar.php?idm= "type="button" class="btn btn-primary">
+                                      </a><a href="eliminar.php?idm='.$row["IDM"].' "type="button" class="btn btn-danger" onclick="return ConfirmarEliminar()">
+                                      Borrar
+                                    </a><a href="editar.php?idm='.$row["IDM"].' "type="button" class="btn btn-primary">
                                     Editar
-                                  </button></td>
+                                  </a></td>
                                     </tr>
                                     ';
                                     }else{
                                         if($row["ESTADO"] =="Aprobado"){
                                             echo '<td class="text-center"><a href="finalizar.php?idm='.$row["IDM"].'"type="button" class="btn btn-danger" onclick="return ConfirmarEstado()">
                                         Finalizar
-                                      </a><button href="eliminar.php?idm= "type="button" class="btn btn-danger" onclick="return ConfirmarEliminar()">
-                                      Eliminar
-                                    </button><button href="editar.php?idm= "type="button" class="btn btn-primary">
+                                      </a><a href="eliminar.php?idm='.$row["IDM"].' "type="button" class="btn btn-danger" onclick="return ConfirmarEliminar()">
+                                      Borrar
+                                    </a><a href="editar.php?idm='.$row["IDM"].' "type="button" class="btn btn-primary">
                                     Editar
-                                  </button></td>
+                                  </a></td>
                                     </tr>
                                     ';
                                         }else{
                                             echo '<td class="text-center"><button href="editar.php?idm= "type="button" class="btn btn-secondary" disabled="disabled">
                                             Finalizada
-                                          </button><button href="eliminar.php?idm= "type="button" class="btn btn-danger" onclick="return ConfirmarEliminar()">
-                                          Eliminar
-                                        </button><button href="editar.php?idm= "type="button" class="btn btn-primary">
+                                          </button><a href="eliminar.php?idm='.$row["IDM"].' "type="button" class="btn btn-danger" onclick="return ConfirmarEliminar()">
+                                          Borrar
+                                        </a><a href="editar.php?idm='.$row["IDM"].' "type="button" class="btn btn-primary">
                                         Editar
-                                      </button></td>
+                                      </a></td>
                                         </tr>
                                         ';
                                         }
