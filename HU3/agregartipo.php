@@ -49,7 +49,7 @@
                         <div class="card-body pt-2">
                         <form class="needs-validation" novalidate method="post" action="">
                         <label class="form-label" for="Nombre">Ingresar Título</label>    
-                        <input class="form-control" required type="text" maxlength="16" name="Nombre" placeholder="Nombre" onkeypress="return valideKey(event);">
+                        <input class="form-control" required type="text" maxlength="15" name="Nombre" placeholder="Nombre" onkeypress="return valideKey(event);">
                         <br>
                         <label class="form-label" for="Descripcion">Ingresar Descripción</label>
                         <input class="form-control" required type="text" maxlength="255" name="Descripcion" placeholder="Descripción" onkeypress="return valideKey(event);">

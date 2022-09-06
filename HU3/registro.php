@@ -29,7 +29,22 @@ if(isset($_POST['Siguiente'])){
     $ID;
     $IDM;
     $IDMa;
-    if(!empty($nombre) && $tipo!=0 && !empty($descripcion) && (!empty($fecha) && $fecha!=1) && !empty($duracion)){
+    $horabien=false;
+    if (strtotime($hora)> strtotime("07:59") && strtotime($hora)< strtotime("18:01")){
+        $horabien=true;
+    }
+    $esta=false;
+    $consultatip ="SELECT IDT FROM TIPO";
+        $restip = mysqli_query($conex,$consultatip);
+        if ($restip) {
+            while($fila=mysqli_fetch_array($restip)){
+                if (strcasecmp($fila['IDT'],$tipo) == 0){
+                    $esta=true;
+                }
+                
+            }
+        }
+    if(!empty($nombre)&& strlen($nombre) <= 15 && $tipo!=0 && !empty($descripcion) && strlen($descripcion) <= 255 && (!empty($fecha) && $fecha!=1) && !empty($duracion) && $esta==true && $duracion>1 && $duracion<=300 && $horabien==true){
         $consultaidma ="SELECT MAX(IDM) as id FROM MANTENCION";
                 $res = mysqli_query($conex,$consultaidma);
                 if($res) {
@@ -53,15 +68,7 @@ if(isset($_POST['Siguiente'])){
                 $consulta = "INSERT INTO ENCARGA VALUES ('$ID','$IDM','$fe','$fec','$duracion')";
                 $resultado = mysqli_query($conex,$consulta);
                 if($resultado) {
-                    echo "<script>";
-            echo "Swal.fire({
-                icon: 'success',
-                title: 'Mantencion registrada con exito'
-                
-              })";
-            echo "</script>";
-                    
-                    
+                    alertabien("La mantencion se registro correctamente");
                 }else{
                     echo "ha ocurrido un error";
                 }
@@ -87,7 +94,7 @@ if(isset($_POST['Siguiente2'])){
     $esta=false;
     $nombre = $_POST['Nombre'];
     $descripcion = $_POST['Descripcion'];
-    if(strlen($nombre)>0 && strlen($descripcion)>0 && strlen($nombre)<15 && strlen($descripcion)<255){
+    if(strlen($nombre)>0 && strlen($descripcion)>0 && strlen($nombre)<=15 && strlen($descripcion)<=255){
         $consulta1 ="SELECT TIPOTITULO FROM TIPO";
         $res1 = mysqli_query($conex,$consulta1);
         if ($res1) {
@@ -107,7 +114,7 @@ if(isset($_POST['Siguiente2'])){
                 alertaerror('Ha ocurrido un error');
             }
         }else{
-            alertaerror('El tipo ya existe');
+            alertaerror('El tipo ya existe intente nuevamente');
         }
          
     }else{

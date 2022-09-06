@@ -48,7 +48,7 @@
                         <div class="card-body pt-2">
                         <form class="needs-validation" novalidate method="post" action="">
                         <label class="form-label" for="Nombre">Ingresar Título</label>    
-                        <input class="form-control" required type="text" name="Nombre" placeholder="Nombre" onkeypress="return valideKey(event);">
+                        <input class="form-control" required type="text" maxlength="15" name="Nombre" placeholder="Nombre" onkeypress="return valideKey(event);">
                         <br>
                         <label class="form-label" for="Tipo">Ingresar Tipo</label>
                         <select class="form-control" name="Tipo" id="" required>
@@ -63,17 +63,18 @@
                         </select>
                         <br>
                         <label class="form-label" for="Descripcion">Ingresar Descripción</label>
-                        <input class="form-control" required type="text" name="Descripcion" placeholder="Descripción" onkeypress="return valideKey(event);">
+                        <input class="form-control" required type="text" maxlength="255" name="Descripcion" placeholder="Descripción" onkeypress="return valideKey(event);">
                         <br>
                         <label class="form-label" for="Fecha">Ingresar Fecha</label>
                         <input class="form-control" required type="date" min="<?php echo date('Y-m-d'); ?>" name="Fecha" placeholder="Fecha">
                         <br>
                         <label class="form-label" for="Hora">Ingresar Hora de inicio</label>
-                        <input class="form-control" required type="time" name="Hora">
-                        <br>
+                        <input class="form-control" required type="time" min="08:00" max="18:00" name="Hora">
+                        <p>*Entre 8:00 hrs y 18:00 hrs</p>
+                        
                         <label class="form-label" for="Duracion">Ingresar Duración</label>
-                        <input class="form-control" required type="number" name="Duracion" placeholder="Duración(en minutos)" onkeypress="return valideKey(event);">
-                        <br>
+                        <input class="form-control" required type="number" max="300" name="Duracion" placeholder="Duración(en minutos) no mas de 300 minutos" onkeypress="return valideKey(event);">
+                        <p>*Duracion maxima 300 minutos</p>
                         <input class="btn btn-primary btn-sm" type="submit" name="Siguiente">
                         <a class="btn btn-success border-0 btn-sm" href="./verMantenciones.php">Ver mantenciones</a>
                         <a class="btn btn-secondary border-0 btn-sm float-right" href="./agregartipo.php">Añadir tipo de mantencion</a>
