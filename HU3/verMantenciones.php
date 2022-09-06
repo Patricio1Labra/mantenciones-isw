@@ -53,7 +53,7 @@
                         <div class="row justify-content-center mt-3">
                         <div class="col-md-12">
                             <table class="table table-striped" id="tabla">
-                                <thead class="bg-azul">
+                                <thead class="text-light bg-primary">
                                     <tr>
                                         <th scope="col">Título</th>
                                         <th scope="col">Descripción</th>
@@ -75,6 +75,7 @@
             </div>    
         </div>
     </div>
+    <style>             .dataTable-sorter::after{                 border-bottom: 4px solid white;             }             .dataTable-sorter::before{                 border-top: 4px solid white;             }         </style>
     
     <?php include('../partes/optionaljavascript.php') ?>
     <script src="../scripts/datatable.js"></script>
