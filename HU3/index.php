@@ -74,10 +74,10 @@
                         
                         <label class="form-label" for="Duracion">Ingresar Duración</label>
                         <input class="form-control" required type="number" max="300" name="Duracion" placeholder="Duración(en minutos) no mas de 300 minutos" onkeypress="return valideKey(event);">
-                        <p>*Duracion maxima 300 minutos</p>
+                        <p>*Duración máxima 300 minutos</p>
                         <input class="btn btn-primary btn-sm" type="submit" name="Siguiente">
                         <a class="btn btn-success border-0 btn-sm" href="./verMantenciones.php">Ver mantenciones</a>
-                        <a class="btn btn-secondary border-0 btn-sm float-right" href="./agregartipo.php">Añadir tipo de mantencion</a>
+                        <a class="btn btn-secondary border-0 btn-sm float-right" href="./agregartipo.php">Añadir tipo de mantención</a>
                         <?php
                             include("./registro.php");
                         ?>

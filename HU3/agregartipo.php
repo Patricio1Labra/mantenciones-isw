@@ -41,10 +41,10 @@
                             <li class="breadcrumb-item"><a href="../index.php">Inicio</a></li>
                             <li class="breadcrumb-item">Mantención de instalaciones</li>
                             <li class="breadcrumb-item"><a href="./index.php">Programación de mantenciones</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Añadir tipo de mantencion</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Añadir tipo de mantención</a></li>
                         </ol>
                         </nav>
-                            <h6 class="font-weight-bold mb-0">Añadir tipo de mantencion</h6>
+                            <h6 class="font-weight-bold mb-0">Añadir tipo de mantención</h6>
                         </div>
                         <div class="card-body pt-2">
                         <form class="needs-validation" novalidate method="post" action="">

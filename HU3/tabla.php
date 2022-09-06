@@ -90,7 +90,7 @@ if(!$resultado){
             <p>*Entre 8:00 hrs y 18:00 hrs</p>
             <label class="form-label" for="Duracion">Ingresar Duración</label>
             <input class="form-control" required type="number" max="300" value="'.$fila['DURACION'].'" name="Duracion" placeholder="Duración(en minutos)" onkeypress="return valideKey(event);">
-            <p>*Duracion maxima 300 minutos</p>
+            <p>*Duración máxima 300 minutos</p>
             <input value="'.$fila['IDM'].'" type="hidden" name="id">
         </div>
         <div class="modal-footer">
