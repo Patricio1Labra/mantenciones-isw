@@ -18,6 +18,8 @@ if(!$resultado){
             </tr>";
     }else{
         while($fila=mysqli_fetch_array($resultado)){
+            $fila['TITULO'][0]=strtoupper($fila['TITULO'][0]);
+            $fila['DESCRIPCION'][0]=strtoupper($fila['DESCRIPCION'][0]);
             if ($fila['ESTADO']=='P') {
                 $fila['ESTADO']='Pendiente';
             }
