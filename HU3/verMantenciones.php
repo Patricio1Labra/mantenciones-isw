@@ -34,7 +34,7 @@
         <!-- Page Content -->
         <div id="content" class="bg-grey w-100">
         <?php include('../con_db.php') ?>
-        <div class="container col-11 m-2">
+        <div class="container col-11 ">
             <div class="row">
                 <div class="col-12 my-3">
                     <div class="card rounded-0">
