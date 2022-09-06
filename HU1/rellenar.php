@@ -6,6 +6,14 @@
         $tipo = $_POST['Tipo'];
         $idv = $_SESSION['ID'];
         $descripcion = $_POST['Descripcion'];
+
+        if(strlen($titul)>15){
+            $titul = substr($titul,0,14);
+        }
+        if(strlen($descripcion)>30){
+            $descripcion = substr($descripcion,0,29);
+        }
+
         if(!empty($titul) && !empty($tipo) && !empty($descripcion)){
             $consult = "INSERT INTO MANTENCION VALUES (default,'$tipo','$titul','$descripcion','P','')";
             $resultado = mysqli_query($conex,$consult);
@@ -21,15 +29,44 @@
                     if($resultado) {
                         print "<script>window.setTimeout(function() { window.location = './index.php' }, 0);</script>";
                     }else{
-                        echo "ha ocurrido un error";
-                    }
+                        #Insert en pide con error
+                        echo "<script>";
+                        echo "Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Error con la base de datos, intente nuevamente'
+                        })";
+                        echo "</script>";
+                        }
+                }else{
+                    #IDM no encontrado
+                    echo "<script>";
+                    echo "Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Error al encontrar id, intente nuevamente'
+                    })";
+                    echo "</script>";
                 }
             }else{
-                echo "ha ocurrido un error";
+                #Insert en mantencion con error
+                echo "<script>";
+                echo "Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Error con la base de datos, intente nuevamente'
+                })";
+                echo "</script>";
             }
-
         }else{
-            echo "rellene los campos porfavor";
+            #campos vacios
+            echo "<script>";
+            echo "Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Los campos estan vacios'
+              })";
+            echo "</script>";
         }
     }
 ?>

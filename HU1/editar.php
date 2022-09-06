@@ -6,6 +6,7 @@
     <!-- head -->
         <?php 
         session_start();
+        $id=$_SESSION['ID'];
         if (!isset($_SESSION['rol'])) {
             header("Location: ../login/login.php");
         }else{
@@ -14,6 +15,16 @@
             }
         }
         include('../partes/head.php');
+        $IDM=$_GET["idm"];
+        $consulta="SELECT m.TITULO, m.DESCRIPCION, m.ESTADO, m.IDT FROM MANTENCION m, PIDE p WHERE IDV='$id' AND m.IDM='$IDM' AND m.IDM=p.IDM";
+        $resultado= mysqli_query($conex,$consulta);
+        if($resultado){
+            while($row = $resultado->fetch_array()){
+                $titulo = $row['TITULO'];
+                $descripcion = $row['DESCRIPCION'];
+                $tipo = $row['IDT'];
+            }
+        }
         ?>
         <title>Formulario Mantencion - Grupo 5</title>
     </head>
@@ -63,8 +74,8 @@
                                     <form method="post" action="" class="needs-validation" id="formul" novalidate>
                                         <div class="form-group">
                                             <div class="col">
-                                                <label for="Titulo" id="Nombre">Nombre de Mantención (15/15)</label>
-                                                <input type="text" class="form-control" id="Titulo" name="Titulo" placeholder="Ingrese aquí su mantención" onkeypress="return valideKey(event);" onkeyup="cont(this,'Nombre de Mantención',15,'Nombre');" onkeydown="cont(this,'Nombre de Mantención',15,'Nombre');" maxlength=15 required>
+                                                <label for="Titulo" id="Nombre">Nombre de Mantención (<?php echo 15-strlen($titulo)?>/15)</label>
+                                                <input type="text" class="form-control" id="Titulo" name="Titulo" placeholder="Ingrese aquí su mantención" onkeypress="return valideKey(event);" onkeyup="cont(this,'Nombre de Mantención',15,'Nombre');" onkeydown="cont(this,'Nombre de Mantención',15,'Nombre');" maxlength=15 value=<?php echo $titulo?> required>
                                                 <div class="invalid-tooltip">
                                                     Ingrese un nombre
                                                 </div>
@@ -72,8 +83,8 @@
                                         </div>
                                         <div class="form-group">
                                             <div class="col">
-                                                <label for="Descripcion" id="Descripcio">Descripción (30/30)</label>
-                                                <input type="text" class="form-control" id="Descripcion" name="Descripcion" placeholder="Ingrese una descripción breve de su problema" onkeypress="return valideKey(event);" onkeyup="cont(this,'Descripción',30,'Descripcio');" onkeydown="cont(this,'Descripción',30,'Descripcio');" maxlength=30 required>
+                                                <label for="Descripcion" id="Descripcio">Descripción (<?php echo 30-strlen($descripcion)?>/30)</label>
+                                                <input type="text" class="form-control" id="Descripcion" name="Descripcion" placeholder="Ingrese una descripción breve de su problema" onkeypress="return valideKey(event);" onkeyup="cont(this,'Descripción',30,'Descripcio');" onkeydown="cont(this,'Descripción',30,'Descripcio');" maxlength=30 value="<?php echo $descripcion?>" required>
                                                 <div class="invalid-tooltip">
                                                     Ingrese una descripción
                                                 </div>
@@ -84,17 +95,18 @@
                                                 <label for="Tipo">Tipo</label>
                                                 <select class="form-control" id="Tipo" name="Tipo" required>
                                                     <option value="" hidden>Seleccionar Tipo</option>
-                                                    <?php include('./tipo.php') ?>
+                                                    <?php include('./tipo2.php') ?>
                                                 </select>
                                                 <div class="invalid-tooltip">
                                                     Ingrese un tipo
                                                 </div>
                                             </div>
                                         </div>
+                                        <input type="text" id="IDM" name="IDM" hidden value=<?php echo $IDM?>>
                                         <input type="text" name="Enviar" id="Enviar" hidden>
                                         <a type="button" onclick="enviar()" class="btn btn-primary border-0">Enviar</a>
                                         <a type="button" onclick="regresar()" class="btn btn-danger border-0">Cancelar</a>
-                                        <?php include('./rellenar.php') ?>
+                                        <?php include('./actualizar.php') ?>
                                     </form>
                                 </div>
                             </div>
@@ -105,12 +117,12 @@
         </div>
 
     <?php include('../partes/optionaljavascript.php') ?>
+    <script src="../scripts/validaform.js"></script>
+    <script src="../scripts/contador.js"></script>
     <script src="../scripts/validanumeroyletra.js"></script>
     <script src="../scripts/contador.js"></script>
     <script src="../scripts/regresar.js"></script>
     <script src="../scripts/enviar.js"></script>
-    <script src="../scripts/validaform.js"></script>
-
 
 </body>
 

@@ -33,15 +33,16 @@ include('../partes/head.php')
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-9 col-md-8">
-                                    <h1 class="font-weight-bold mb-0">Calendario de Mantenciones </h1>
-                                    <p class="lead text-muted">Programa de Mantención y Agenda</p>
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb bg-transparent">
                                             <li class="breadcrumb-item"><a href="../index.php">Inicio</a></li>
-                                            <li class="breadcrumb-item">Mantencion de Instalaciones</li>
+                                            <li class="breadcrumb-item">Mantención de Instalaciones</li>
                                             <li class="breadcrumb-item active" aria-current="page">Calendario</li>
                                         </ol>
                                     </nav>
+                                    <h1 class="font-weight-bold mb-0">Calendario de Mantenciones </h1>
+                                    <p class="lead text-muted">Programa de Mantención y Agenda</p>
+                                    
                                 </div>
                                 
                             </div>
@@ -52,12 +53,26 @@ include('../partes/head.php')
                         <div class="container col-10">
                                 <div class="col-10 ">
                                     <div id='CalendarioWeb'></div>
+                                    <div class="row mt-2">
+                                        <div class="ml-3">
+                                            <i class="fas fa-circle fa-xl " style="color: #C4AB55"></i>
+                                            <label>
+                                                <b>Mantenciones pendientes</b>
+                                            </label>
+                                        </div>
+                                        <div class="ml-3">
+                                            <i class="fas fa-circle fa-xl " style="color: #107135"></i>
+                                            <label>
+                                                <b>Mantenciones terminadas</b>
+                                            </label>
+                                        </div>
+                        </div>
+                    
                                     
                             </div>
                         </div>
                         
                         
-                    
                     </section>
 
             </div>
@@ -72,27 +87,36 @@ include('../partes/head.php')
     
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog " role="document">
+    <div class="modal-dialog modal-dialog-centered " role="document">
         <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="tituloEvento">Detalles de la Mantención</h5>
+            <h5 class="modal-title" style="font-weight: bold;" id="tituloEvento">Detalles de la Mantención</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
             </button>
         </div>
         <div class="modal-body">
             <dl class="row">
-                <dt class="col-sm-3">Título</dt>
-                <dd class="col-sm-9" id="title"></dd>
-                <dt class="col-sm-3">Descripción</dt>
-                <dd class="col-sm-9" id="description"></dd>
-                <dt class="col-sm-3">Fecha</dt>
-                <dd class="col-sm-9" id="start"></dd>
+                <dt class="col-sm-4">Título</dt>
+                <dd class="col-sm-8" id="title"></dd>
+                <dt class="col-sm-4">Descripción</dt>
+                <dd class="col-sm-8" id="description"></dd>
+                <dt class="col-sm-4">Estado</dt>
+                <dd class="col-sm-8" id="estadoev"></dd>
+                <dt class="col-sm-4">Fecha </dt>
+                <dd class="col-sm-8" id="start"></dd>
+                <dt class="col-sm-4">Hora Inicio</dt>
+                <dd class="col-sm-8" id="starttime"></dd>
+                <dt class="col-sm-4">Hora Término</dt>
+                <dd class="col-sm-8" id="endtime"></dd>
+                <dt class="col-sm-4">Duración</dt>
+                <dd class="col-sm-8" id="duration"></dd>
+                
             </dl>    
         </div>
         <div class="modal-footer">
             
-            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
         </div>
         </div>
     </div>

@@ -11,9 +11,32 @@
 
 ?> 
     <?php include('../partes/head.php') ?>
+    <link href="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.css" rel="stylesheet" type="text/css">
+    <script src="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.js" type="text/javascript"></script>
     <title>Gestión de solicitudes</title>
 </head>
-
+<script type="text/javascript">
+    function ConfirmarEstado()
+    {
+        var respuesta = confirm("Estas seguro que quieres cambiar el estado?");
+        if (respuesta == true)
+        {
+            return true;
+        }else{
+            return false;
+        }
+    }
+    function ConfirmarEliminar()
+    {
+        var respuesta = confirm("Estas seguro que quieres eliminar esta mantencion?");
+        if (respuesta == true)
+        {
+            return true;
+        }else{
+            return false;
+        }
+    }
+</script>    
 <body>
     <div class="d-flex" id="content-wrapper">
     <!-- sideBar -->
@@ -29,9 +52,15 @@
 
         <!-- Page Content -->
         <div id="content" class="bg-grey w-100">
-
-                <section class="bg-light py-3">
+            <section class="bg-light py-3">
                     <div class="container">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb bg-transparent">
+                            <li class="breadcrumb-item"><a href="../index.php">Inicio</a></li>
+                            <li class="breadcrumb-item">Mantención de instalaciones</li>
+                            <li class="breadcrumb-item active" aria-current="page">Gestión de solicitudes</li>
+                        </ol>
+                    </nav>
                         <div class="row">
                             <div class="col-lg-9 col-md-8">
                                 <h1 class="font-weight-bold mb-0">Gestión de solicitudes </h1>
@@ -41,75 +70,33 @@
                     </div>
                 </section>
 
-                <section class="bg-mix py-3">
-                  <div class="table-responsive table-hover" id="TablaConsulta">
-                      <table class="table">
-                          <thead class="text-muted">
-                              <th class="text-center">Tipo</th>
-                              <th class="text-center">Titulo</th>
-                              <th class="text-center">Descripcion</th>
-                              <th class="text-center">Fecha solicitud</th>
-                              <th class="text-center">Vecino</th>
-                              <th class="text-center">Estado</th>
-                              <th class="text-center">Acciones</th>
-                         </thead>
-                         <tbody>
-                             <tr>
-                             <?php
-                                include('../con_db.php');
-                                $consulta = "SELECT t.TIPOTITULO,m.TITULO,m.DESCRIPCION,p.FECHA,m.ESTADO,v.RUT,v.NOMBRE,m.IDM FROM MANTENCION m, TIPO t, PIDE p, VECINO v  WHERE p.IDM = m.IDM and v.IDV=p.IDV and m.IDT=t.IDT";
-                                $resultado = mysqli_query($conex,$consulta);
-                                if($resultado){
-                                    while($row = $resultado->fetch_array()){
-                                        if ($row['ESTADO']=='P') {
-                                            $row['ESTADO']='Pendiente';
-                                        }
-                                        if ($row['ESTADO']=='T') {
-                                            $row['ESTADO']='Terminado';
-                                        }
-                                        if ($row['ESTADO']=='A') {
-                                            $row['ESTADO']='Aprobado';
-                                        }
-                                        echo'
+                <section>
+                <div class="container">
+                    <div class="my-2">
+                        <div class="card rounded-0">
+                        <table class="table table-striped" id="tabla">
+                            <thead class="bg-azul">
                                 <tr>
-                                    <td class="text-center">'.$row["TIPOTITULO"].'</td>
-                                    <td class="text-center">'.$row["TITULO"].'</td>
-                                    <td class="text-center">'.$row["DESCRIPCION"].'</td>
-                                    <td class="text-center">'.$row["FECHA"].'</td>
-                                    <td class="text-center">'.$row["NOMBRE"].' '.$row["RUT"].'</td>
-                                    <td class="text-center">'.$row["ESTADO"].'</td>';
-                                    if($row["ESTADO"] == "Pendiente"){
-                                        echo '<td class="text-center"><a href="aceptar.php?idm='.$row["IDM"].'"type="button" class="btn btn-success">
-                                        Aprobar
-                                      </a></td>
-                                    </tr>
-                                    ';
-                                    }else{
-                                        if($row["ESTADO"] =="Aprobado"){
-                                            echo '<td class="text-center"><a href="finalizar.php?idm='.$row["IDM"].'"type="button" class="btn btn-danger">
-                                        Finalizar
-                                      </a></td>
-                                    </tr>
-                                    ';
-                                        }else{
-                                            echo '<td class="text-center"><button href="editar.php?idm= "type="button" class="btn btn-secondary" disabled="disabled">
-                                            Finalizada
-                                          </button></td>
-                                        </tr>
-                                        ';
-                                        }
-                                        
-                                    }
-                                    
-                                
-                                    }
-                                }
-                                ?>                    
-                            </tr>
-                        </tbody>
-                     </table>
-                 </div>  
-                </section>
+                                    <th scope="col">Tipo</th>
+                                    <th scope="col">Titulo</th>
+                                    <th scope="col">Descripcion</th>
+                                    <th scope="col">Fecha solicitud</th>
+                                    <th scope="col">Vecino</th>
+                                    <th scope="col">RUT</th>
+                                    <th scope="col">Estado</th>
+                                    <th scope="col">Acciones</th>
+                                </tr>
+                            </thead>
+                                <tbody>
+                                    <?php                
+                                    include("./mantencionesb.php");
+                                    ?>
+                                </tbody>
+                        </table>
+                        </div> 
+                    </div> 
+                </div>  
+            </section>
         </div>
 
 
@@ -117,6 +104,7 @@
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <?php include('../partes/optionaljavascript.php') ?>
+    <script src="../scripts/datatable.js"></script>
 </body>
 
 </html>

@@ -34,7 +34,7 @@
         <!-- Page Content -->
         <div id="content" class="bg-grey w-100">
         <?php include('../con_db.php') ?>
-        <div class="container col-11 m-2">
+        <div class="container col-11 ">
             <div class="row">
                 <div class="col-12 my-3">
                     <div class="card rounded-0">
@@ -53,13 +53,14 @@
                         <div class="row justify-content-center mt-3">
                         <div class="col-md-12">
                             <table class="table table-striped" id="tabla">
-                                <thead class="bg-azul">
+                                <thead class="text-light bg-primary">
                                     <tr>
                                         <th scope="col">Título</th>
                                         <th scope="col">Descripción</th>
                                         <th scope="col">Estado</th>
                                         <th scope="col">Fecha</th>
                                         <th scope="col">Duración (minutos)</th>
+                                        <th scope="col">Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -74,6 +75,7 @@
             </div>    
         </div>
     </div>
+    <style>             .dataTable-sorter::after{                 border-bottom: 4px solid white;             }             .dataTable-sorter::before{                 border-top: 4px solid white;             }         </style>
     
     <?php include('../partes/optionaljavascript.php') ?>
     <script src="../scripts/datatable.js"></script>
