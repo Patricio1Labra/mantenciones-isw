@@ -45,7 +45,7 @@ if(isset($_POST['editar'])){
                             timer: 1500
                           })";
                         echo "</script>";
-                        print "<script>window.setTimeout(function() { window.location = './vermantenciones.php' }, 1500);</script>";
+                        print "<script>window.setTimeout(function() { window.location = './verMantenciones.php' }, 1500);</script>";
 
                     }else{
                         echo 'Error';
