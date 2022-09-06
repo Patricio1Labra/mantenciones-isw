@@ -15,7 +15,7 @@ if(isset($_POST['Siguiente'])){
     $fec= $f->format('Y-m-d H:i:s');
     $sis=date("Y-m-d H:i:s");
     
-    if (strtotime($fecha)< strtotime($sis) || $fecha!='') {
+    if (strtotime($fecha)< strtotime($sis) && $fecha!='') {
         $fecha='1';
     }
     
@@ -37,7 +37,7 @@ if(isset($_POST['Siguiente'])){
                 
             }
         }
-    if(!empty($nombre)&& strlen($nombre) <= 15 && $tipo!=0 && !empty($descripcion) && strlen($descripcion) <= 255 && (!empty($fecha) && $fecha!=1) && !empty($duracion) && $esta==true && $duracion>1 && $duracion<=300 && $horabien==true){
+    if(!empty($nombre)&& strlen($nombre) <= 15 && $tipo!=0 && !empty($descripcion) && strlen($descripcion) <= 255 && !empty($fecha) && $fecha!=1 && !empty($duracion) && $esta==true && $duracion>=1 && $duracion<=300 && $horabien==true){
         $consultaidma ="SELECT MAX(IDM) as id FROM MANTENCION";
                 $res = mysqli_query($conex,$consultaidma);
                 if($res) {
