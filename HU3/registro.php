@@ -84,33 +84,53 @@ if(isset($_POST['Siguiente'])){
        
 }
 if(isset($_POST['Siguiente2'])){
+    $esta=false;
     $nombre = $_POST['Nombre'];
     $descripcion = $_POST['Descripcion'];
-    $consulta ="INSER INTO TIPO VALUES (default,'$nombre','$descripcion')";
-    $res = mysqli_query($conex,$consulta);
-    if($res) {
-        alertabien();
+    if(strlen($nombre)>0 && strlen($descripcion)>0 && strlen($nombre)<15 && strlen($descripcion)<255){
+        $consulta1 ="SELECT TIPOTITULO FROM TIPO";
+        $res1 = mysqli_query($conex,$consulta1);
+        if ($res1) {
+            while($fila=mysqli_fetch_array($res1)){
+                if (strcasecmp($fila['TIPOTITULO'],$nombre) == 0){
+                    $esta=true;
+                }
+                
+            }
+        }
+        if ($esta==false){
+            $consulta ="INSERT INTO TIPO VALUES (default,'$nombre','$descripcion')";
+            $res = mysqli_query($conex,$consulta);
+            if($res) {
+                alertabien('Se Añadio correctamente');
+            }else{
+                alertaerror('Ha ocurrido un error');
+            }
+        }else{
+            alertaerror('El tipo ya existe');
+        }
+         
     }else{
-        alertaerror();
-    }   
+        alertaerror('Debe ingresar un tamaño valido');
+    }
 }
 
-function alertabien () {
+function alertabien ($mensaje) {
     echo "<script>";
     echo "Swal.fire({
           icon: 'success',
-          title: 'Se registro correctamente',
+          title: '".$mensaje."',
           showConfirmButton: false,
           timer: 1500
           })";
     echo "</script>";
     print "<script>window.setTimeout(function() { window.location = './index.php' }, 1500);</script>";
 }
-function alertaerror () {
+function alertaerror ($mensaje) {
     echo "<script>"; 
     echo "Swal.fire({
           icon: 'error',
-          title: 'Ha ocurrido un error intente nuevamente',
+          title: '".$mensaje."',
           showConfirmButton: false,
           timer: 1500
           })";

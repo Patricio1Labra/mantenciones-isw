@@ -49,10 +49,10 @@
                         <div class="card-body pt-2">
                         <form class="needs-validation" novalidate method="post" action="">
                         <label class="form-label" for="Nombre">Ingresar Título</label>    
-                        <input class="form-control" required type="text" name="Nombre" placeholder="Nombre" onkeypress="return valideKey(event);">
+                        <input class="form-control" required type="text" maxlength="16" name="Nombre" placeholder="Nombre" onkeypress="return valideKey(event);">
                         <br>
                         <label class="form-label" for="Descripcion">Ingresar Descripción</label>
-                        <input class="form-control" required type="text" name="Descripcion" placeholder="Descripción" onkeypress="return valideKey(event);">
+                        <input class="form-control" required type="text" maxlength="255" name="Descripcion" placeholder="Descripción" onkeypress="return valideKey(event);">
                         <br>
                         <input class="btn btn-primary btn-sm" type="submit" name="Siguiente2">
                         <a class="btn btn-danger border-0 btn-sm" href="./index.php">Volver</a>
