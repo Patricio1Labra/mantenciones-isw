@@ -13,24 +13,17 @@ if(isset($_POST['Siguiente'])){
     $f= new DateTime($fe);
     $f->modify('+'.$duracion.' minute');
     $fec= $f->format('Y-m-d H:i:s');
-    $consul ="SELECT DATE_FORMAT(SYSDATE(), '%Y-%m-%d') AS FECHA";
-                $res = mysqli_query($conex,$consul);
-                if($res) {
-                    while($valoresm = $res->fetch_array()) {
-                        $Fechasis= $valoresm[0];
-                    }
-                }
+    $sis=date("Y-m-d H:i:s");
     
-    if ($fecha<$Fechasis && $fecha!='') {
+    if (strtotime($fecha)< strtotime($sis) || $fecha!='') {
         $fecha='1';
-        
     }
     
     $ID;
     $IDM;
     $IDMa;
     $horabien=false;
-    if (strtotime($hora)> strtotime("07:59") && strtotime($hora)< strtotime("18:01")){
+    if (strtotime($hora)> strtotime("07:59") && strtotime($hora)< strtotime("18:01") && $hora!=''){
         $horabien=true;
     }
     $esta=false;
@@ -68,23 +61,23 @@ if(isset($_POST['Siguiente'])){
                 $consulta = "INSERT INTO ENCARGA VALUES ('$ID','$IDM','$fe','$fec','$duracion')";
                 $resultado = mysqli_query($conex,$consulta);
                 if($resultado) {
-                    alertabien("La mantencion se registro correctamente");
+                    alertabien("Se registro Correctamente");
                 }else{
-                    echo "ha ocurrido un error";
+                    alertaerror('Ha ocurrido un error');
                 }
         
             }
             
         }else{
-            echo "ha ocurrido un error";
+            alertaerror('Ha ocurrido un error');
         }
 
     }else{
         
         if($fecha==1){
-            echo "Fecha incorrecta (la fecha debe ser mayor o igual a la de hoy) ";    
+            alertaerror("Fecha incorrecta (la fecha debe ser mayor o igual a la de hoy)");    
         }else{
-        echo "rellene los campos por favor";
+        alertaerror ("rellene los campos por favor");
         }
     }
     
