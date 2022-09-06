@@ -86,16 +86,36 @@ if(isset($_POST['Siguiente'])){
 if(isset($_POST['Siguiente2'])){
     $nombre = $_POST['Nombre'];
     $descripcion = $_POST['Descripcion'];
-    $consulta ="INSERT INTO TIPO VALUES (default,'$nombre','$descripcion')";
+    $consulta ="INSER INTO TIPO VALUES (default,'$nombre','$descripcion')";
     $res = mysqli_query($conex,$consulta);
     if($res) {
-        
+        alertabien();
     }else{
-        echo "error";
+        alertaerror();
     }   
 }
 
-
+function alertabien () {
+    echo "<script>";
+    echo "Swal.fire({
+          icon: 'success',
+          title: 'Se registro correctamente',
+          showConfirmButton: false,
+          timer: 1500
+          })";
+    echo "</script>";
+    print "<script>window.setTimeout(function() { window.location = './index.php' }, 1500);</script>";
+}
+function alertaerror () {
+    echo "<script>"; 
+    echo "Swal.fire({
+          icon: 'error',
+          title: 'Ha ocurrido un error intente nuevamente',
+          showConfirmButton: false,
+          timer: 1500
+          })";
+    echo "</script>";
+}
 
 
 ?>
